@@ -13,15 +13,15 @@
 <body>
 
   <!-- nav -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #839A42;">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #839a42c9;">
+    <div class="container" style="margin: 0px;">
       <a class="navbar-brand text-white" href="#"><img src="./img/logo.jpg" class="logo" alt="pora"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#precios">Precios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#preciosycombos">Precios y Combos</a></li>
             <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
             <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
@@ -30,40 +30,30 @@
     </div>
   </nav>
 
-  <!-- carrusel -->
-  <div id="carouselExample" class="carousel slide my-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./img/congelado.svg" class="d-block mx-auto carousel-img" alt="Frizados">
-        <div class="carousel-caption d-none d-md-block">
+  <!-- Fila de Imagenes -->
+  <section class="categoria-destacada py-5">
+    <div class="container-fluid" id="PYC">
+      <h2 class="SubCarr">Precios y Combos</h2>
+      <div class="row text-center gx-5">
+        /*Col-6 pantalla Celular (2 Elementos en cada columna) col-3 pantallas mas grandes(Un elemento en cada 3 columnas)*/
+        <div class="col-6 col-md-3 mb-4">
+          <img src="./img/congelado.svg" class="img-fluid mb-2" alt="Frizados">
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/horneado.svg" class="d-block mx-auto carousel-img" alt="Horneados">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="col-6 col-md-3 mb-4">
+          <img src="./img/horneado.svg" class="img-fluid mb-2" alt="Horneados">
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/combo.svg" class="d-block mx-auto carousel-img" alt="Combos">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="col-6 col-md-3 mb-4">
+          <img src="./img/mayorista.svg" class="img-fluid mb-2" alt="Combos">
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/mayorista.svg" class="d-block mx-auto carousel-img" alt="Mayoristas">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="col-6 col-md-3 mb-4">
+          <img src="./img/combo.svg" class="img-fluid mb-2" alt="Mayoristas">
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
-  </div>
+  </section>
 
   <!-- ¿quienes somos? -->
-  <section id="quienes-somos" class="py-5 my-5" style="background-color: #FAC172;">
+  <section id="quienes-somos" class="py-5 mb-5" style="background-color: #e5b87abd;">
     <div class="container text-center">
       <h2>¿Quiénes Somos?</h2>
       <p class="lead">Nos dedicamos a la elaboración artesanal de chipá congelados y empaquetados.</p>
@@ -101,33 +91,28 @@
   </section>
 
   <!-- footer -->
-  <footer id="contacto" class="pt-4" style="background-color: #78C4B7;">
+  <footer id="contacto" class="pt-4 pb-3" style="background-color: #78c4b7bd;">
     <div class="container text-white">
-      <div class="row">
+      <div class="row text-center text-md-start">
         <div class="col-md-6 d-flex flex-column justify-content-center">
-          <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong> Estado de Israel N° 1426- San Luis, Capital</p>
-          <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp y envíos:</strong> 266-4943616</p>
-          <p><i class="bi bi bi-clock me-2"></i><strong>Abrimos:</strong> Lunes a Sábados: 8:30 a 13:00 y 16:30 a 21:00</p>
-          <p><i class="bi bi-envelope-fill me-2"></i><strong>Correo:</strong> porasaboresdel.litoral@gmail.com</p>
+          <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp:</strong> 266-4943616</p>
+          <p><i class="bi bi-clock me-2"></i><strong>Horarios:</strong> Lun a Sáb, 8:30 a 13 y 16:30 a 21</p>
+          <p><i class="bi bi-envelope-fill me-2"></i><strong>Email:</strong> porasaboresdel.litoral@gmail.com</p>
+          <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong></p>
+          <a href="https://maps.app.goo.gl/j3B8qAidLMkoVyiM7" target="_blank" class="btn btn-outline-light btn-sm" id="BMapa">
+            Ver en Google Maps
+          </a>
+
         </div>
-        <div class="col-md-6">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.1234567890123!2d-66.123456789!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d1234567890123%3A0x123456789abcdef!2sEstado%20de%20Israel%201426%2C%20San%20Luis%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890123" 
-            width="100%" 
-            height="300" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="col-md-6 text-center">
+          <img src="./img/logo.jpg" alt="Logo" class="img-fluid rounded" style="max-width: 150px;">
         </div>
-        <div class="col-md-12 text-center mt-5 mb-0">
-          <p class="opacity-75">&copy; 2025 Porã. Todos los derechos reservados.</p>
+        <div class="col-12 text-center mt-3">
+          <p class="opacity-75 small">&copy; 2025 Porã. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
