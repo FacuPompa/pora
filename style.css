@@ -1,7 +1,16 @@
+/* variables */
+:root {
+  --colorverde: #839A42;
+  --colorfondo: #e2e2e2;
+  --coloramarillo: #FAC172;
+  --colorturquesa: #78C4B7;
+  --colorverdehover: #6e8235;
+}
+
 /* general */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e2e2e2;
+    background-color: var(--colorfondo);
     background-image: radial-gradient(circle, rgba(131, 154, 66, 0.1) 1px, transparent 1px),
                       radial-gradient(circle, rgba(131, 154, 66, 0.1) 1px, transparent 1px);
     background-size: 20px 20px; 
@@ -10,7 +19,7 @@ body {
   }
   
   h2 {
-    color: #839A42;
+    color: var(--colorverde);
     font-weight: 600;
   }
   
@@ -30,12 +39,16 @@ body {
   }
   
   nav .nav-link:hover {
-    color: #FAC172;
+    color: var(--coloramarillo);
   }
 
   .logo{
     width: 100px;
     border-radius: 30%;
+  }
+
+  .quienessomos {
+    background-color: var(--coloramarillo);
   }
 
    /* carrusel */
@@ -45,7 +58,7 @@ body {
     top: 50%; 
     transform: translateY(-50%); 
     left: 5%;
-    color: #839A42;
+    color: var(--colorverde);
   }
   
   .carousel-control-next {
@@ -53,15 +66,18 @@ body {
     top: 50%;
     transform: translateY(-50%);
     right: 5%;
-    color: #839A42;
+    color: var(--colorverde);
   }
   
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-    background-color: #839A42; 
+    background-color: var(--colorverde); 
     border-radius: 50%;
   }
 
+  .carousel-img{
+    
+  }
   
   /* cards */
   .card {
@@ -89,19 +105,37 @@ body {
   }
   
   .btn-primary {
-    background-color: #839A42;
+    background-color: var(--colorverde);
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .btn-primary:hover {
-    background-color: #6e8235;
+    background-color: var(--colorverdehover);
     transform: scale(1.05);
   }
   
+  /* boton whatsapp */
+  .botonwpp {
+    position: fixed;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    font-size: 30px;
+    border-radius: 50px;
+    color: #ffff;
+    background-color: #25d366;
+    box-shadow: 2px 2px 3px #999f;
+  }
+
+
+
   /* footer */
   footer {
     font-size: 14px;
+    background-color: var(--colorturquesa);
   }
   
   footer p {
