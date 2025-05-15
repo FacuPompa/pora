@@ -1,7 +1,7 @@
 /* general */
   body {
     font-family: 'Poppins', sans-serif;
-    background-image: url('./img/wood-texture-background-hjv030k5tn83g0of.jpg');
+    background-image: url('img/pexels-fwstudio-33348-172276.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,6 +19,9 @@
     line-height: 1.6;
   }
   
+  .productos{
+    margin-top: 50px;
+  }
   /* nav */
   .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -123,3 +126,18 @@
   #BMapa{
     max-width: 65%;
   }
+@media screen and (max-width: 768px){
+
+  #BMapa{
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  #BotNav{
+    margin-top: -10px;
+  }
+  .logo{
+    width: 55px;
+    border-radius: 30%;
+    margin-top: -10px;
+  }
+}
