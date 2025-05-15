@@ -14,105 +14,168 @@
 
   <!-- nav -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #839a42c9;">
-    <div class="container" style="margin: 0px;">
-      <a class="navbar-brand text-white" href="#"><img src="./img/logo.jpg" class="logo" alt="pora"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#preciosycombos">Precios y Combos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
-            <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      <div class="container">
+        <a class="navbar-brand text-white" href="#"><img src="./img/logo.jpg" class="logo" alt="pora"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="BotNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#preciosycombos">Precios y Combos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
+              <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+              <li>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                  <i class="bi bi-cart pe-2"></i> Carrito
+                </button>
+              </li>
           </ul>
+        </div>
       </div>
-    </div>
   </nav>
 
-  <!-- Fila de Imagenes -->
-  <section class="categoria-destacada py-5">
-    <div class="container-fluid" id="PYC">
-      <h2 class="SubCarr" id="preciosycombos">Precios y Combos</h2>
-      <div class="row text-center gx-5">
-        <!--Col-6 pantalla Celular (2 Elementos en cada columna) col-3 pantallas mas grandes(Un elemento en cada 3 columnas)-->
-        <div class="col-6 col-md-3 mb-4">
-          <img src="./img/congelado.svg" class="img-fluid mb-2" alt="Frizados">
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Articulos del Carrito</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="col-6 col-md-3 mb-4">
-          <img src="./img/horneado.svg" class="img-fluid mb-2" alt="Horneados">
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Productos</p>
+          <p>Productos</p>
         </div>
-        <div class="col-6 col-md-3 mb-4">
-          <img src="./img/mayorista.svg" class="img-fluid mb-2" alt="Combos">
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Comprar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Seguir Comprando</button>
         </div>
-        <div class="col-6 col-md-3 mb-4">
-          <img src="./img/combo.svg" class="img-fluid mb-2" alt="Mayoristas">
-        </div>
+
       </div>
     </div>
+  </div>
+
+  <!-- productos -->
+  <section id="productos">
+      <div class="container my-5">
+        <h2 class="text-center pb-4 pt-5">Nuestros Productos</h2>
+        <div class="row">
+          <div class="col-md-6 mb-5">
+            <div class="card">
+              <img src="./img/chipa1.jpg" class="card-img-top cardimg" alt="Chipá">
+              <div class="card-body">
+                <h5 class="card-title">Frizados</h5>
+                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, unde consectetur. Quas in voluptatem sit totam molestias! Tenetur velit animi nulla dicta iste cupiditate, asperiores minima suscipit non voluptatibus aperiam inventore? Asperiores modi maiores doloribus molestias laudantium iusto obcaecati temporibus harum incidunt laborum eum quam, officiis labore minus repudiandae aut?.</p>
+                <a href="#" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./img/chipa2.jpg" class="card-img-top cardimg" alt="Horneados">
+              <div class="card-body">
+                <h5 class="card-title">Horneados</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum culpa rerum illum nihil officia labore veniam quibusdam maxime adipisci animi..</p>
+                <a href="#" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </section>
 
   <!-- ¿quienes somos? -->
-  <section id="quienes-somos" class="py-5 mb-5" style="background-color: #e5b87abd;">
-    <div class="container text-center">
-      <h2>¿Quiénes Somos?</h2>
-      <p class="lead">Nos dedicamos a la elaboración artesanal de chipá congelados y empaquetados.</p>
-      <p>Principalmente apuntamos a un mercado mayorista. El chipá de “Porá” es un producto alimenticio con una receta totalmente única, original y sin TACC.</p>
-    </div>
+  <section id="quienes-somos" class="p-3 mb-2" style="background-color: #e5b87abd;">
+      <div class="container text-center">
+        <h2>¿Quiénes Somos?</h2>
+        <p class="lead">Nos dedicamos a la elaboración artesanal de chipá congelados y empaquetados.</p>
+        <p>Principalmente apuntamos a un mercado mayorista. El chipá de “Porá” es un producto alimenticio con una receta totalmente única, original y sin TACC.</p>
+      </div>
   </section>
 
-  <!-- productos -->
-  <section id="productos" class="my-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Nuestros Productos</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <img src="./img/chipa1.jpg" class="card-img-top cardimg" alt="Chipá">
-            <div class="card-body">
-              <h5 class="card-title">Frizados</h5>
-              <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, unde consectetur. Quas in voluptatem sit totam molestias! Tenetur velit animi nulla dicta iste cupiditate, asperiores minima suscipit non voluptatibus aperiam inventore? Asperiores modi maiores doloribus molestias laudantium iusto obcaecati temporibus harum incidunt laborum eum quam, officiis labore minus repudiandae aut?.</p>
-              <a href="#" class="btn btn-primary">Ver más</a>
-            </div>
+  <!-- Fila de Imagenes -->
+  <section class="categoria-destacada d-none d-md-block">
+      <div class="container-fluid" id="PYC">
+        <h2 class="SubCarr" id="preciosycombos">Precios y Combos</h2>
+        <div class="row text-center gx-5">
+          <!--Col-6 pantalla Celular (2 Elementos en cada columna) col-3 pantallas mas grandes(Un elemento en cada 3 columnas)-->
+          <div class="col-6 col-md-3 mb-4">
+            <img src="./img/congelado.svg" class="img-fluid mb-2" alt="Frizados">
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card">
-            <img src="./img/chipa2.jpg" class="card-img-top cardimg" alt="Horneados">
-            <div class="card-body">
-              <h5 class="card-title">Horneados</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum culpa rerum illum nihil officia labore veniam quibusdam maxime adipisci animi..</p>
-              <a href="#" class="btn btn-primary">Ver más</a>
-            </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="./img/horneado.svg" class="img-fluid mb-2" alt="Horneados">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="./img/mayorista.svg" class="img-fluid mb-2" alt="Combos">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="./img/combo.svg" class="img-fluid mb-2" alt="Mayoristas">
           </div>
         </div>
       </div>
-    </div>
   </section>
+
+  <!-- Carrusel en Celular-->
+  <div class="container-fluid d-block d-md-none my-5 py-2">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/congelado.svg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/horneado.svg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/mayorista.svg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/combo.svg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 
   <!-- footer -->
   <footer id="contacto" class="pt-4 pb-3" style="background-color: #78c4b7bd;">
-    <div class="container text-white">
-      <div class="row text-center text-md-start">
-        <div class="col-md-6 d-flex flex-column justify-content-center">
-          <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp:</strong> 266-4943616</p>
-          <p><i class="bi bi-clock me-2"></i><strong>Horarios:</strong> Lun a Sáb, 8:30 a 13 y 16:30 a 21</p>
-          <p><i class="bi bi-envelope-fill me-2"></i><strong>Email:</strong> porasaboresdel.litoral@gmail.com</p>
-          <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong></p>
-          <a href="https://maps.app.goo.gl/j3B8qAidLMkoVyiM7" target="_blank" class="btn btn-outline-light btn-sm" id="BMapa">
-            Ver en Google Maps
-          </a>
+      <div class="container text-white">
+        <div class="row text-center text-md-start">
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp:</strong> 266-4943616</p>
+            <p><i class="bi bi-clock me-2"></i><strong>Horarios:</strong> Lun a Sáb, 8:30 AM a 13:00 PM y 16:30 PM a 21:00 PM</p>
+            <p><i class="bi bi-envelope-fill me-2"></i><strong>Email:</strong> porasaboresdel.litoral@gmail.com</p>
+            <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong></p>
+            <a href="https://maps.app.goo.gl/j3B8qAidLMkoVyiM7" target="_blank" class="btn btn-outline-light btn-sm" id="BMapa">
+              Ver en Google Maps
+            </a>
 
-        </div>
-        <div class="col-md-6 text-center">
-          <img src="./img/logo.jpg" alt="Logo" class="img-fluid rounded" style="max-width: 150px;">
-        </div>
-        <div class="col-12 text-center mt-3">
-          <p class="opacity-75 small">&copy; 2025 Porã. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="./img/logo.jpg" alt="Logo" class="img-fluid rounded" style="max-width: 150px;">
+          </div>
+          <div class="col-12 text-center mt-3">
+            <p class="opacity-75 small">&copy; 2025 Porã. Todos los derechos reservados.</p>
+          </div>
         </div>
       </div>
-    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+
