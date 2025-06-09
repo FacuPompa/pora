@@ -1,16 +1,16 @@
 /* general */
-body {
+  body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e2e2e2;
-    background-image: radial-gradient(circle, rgba(131, 154, 66, 0.1) 1px, transparent 1px),
-                      radial-gradient(circle, rgba(131, 154, 66, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px; 
-    background-position: 0 0, 10px 10px;
+    background-image: url('img/pexels-fwstudio-33348-172276.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     color: #333;
   }
-  
+
   h2 {
-    color: #839A42;
+    color: white;
     font-weight: 600;
   }
   
@@ -19,9 +19,14 @@ body {
     line-height: 1.6;
   }
   
+  .productos{
+    margin-top: 50px;
+  }
   /* nav */
   .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    justify-content: center;
   }
 
   nav .nav-link {
@@ -34,13 +39,25 @@ body {
   }
 
   .logo{
-    width: 100px;
+    width: 60px;
     border-radius: 30%;
   }
 
    /* carrusel */
+  
+  .SubCarr{
+    text-align:center;
+    padding: 20px 0px 10px 0px;
+    margin: 20px auto;
+    width: 40%;
+  }
 
-   .carousel-control-prev {
+.carousel-img {
+  max-height:500px;
+  width: auto;
+  object-fit: contain;
+}
+  .carousel-control-prev {
     position: absolute;
     top: 50%; 
     transform: translateY(-50%); 
@@ -61,7 +78,6 @@ body {
     background-color: #839A42; 
     border-radius: 50%;
   }
-
   
   /* cards */
   .card {
@@ -76,7 +92,7 @@ body {
   }
 
   .card img {
-    height: 650px;
+    max-height: 300px;
     object-fit: cover;
   }
   
@@ -89,13 +105,13 @@ body {
   }
   
   .btn-primary {
-    background-color: #839A42;
+    background-color: #C7573B;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .btn-primary:hover {
-    background-color: #6e8235;
+    background-color:#78C4B7 ;
     transform: scale(1.05);
   }
   
@@ -107,3 +123,7 @@ body {
   footer p {
     margin-bottom: 10px;
   }
+  #BMapa{
+    max-width: 65%;
+  }
+
