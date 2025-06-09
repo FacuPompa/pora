@@ -11,26 +11,63 @@
   <script src="main.js"></script>
 </head>
 <body>
+<p id="prueba"></p>
+<p id="prueba2"></p>
+
+
+
+
+
   <!-- nav -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #839A42;">
-    <div class="container">
-      <a class="navbar-brand text-white" href="#"><img src="./img/logo.jpg" class="logo" alt="pora"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#precios">Precios</a></li>
-            <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
-            <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #839a42c9;">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#"><img src="./img/logo.jpg" class="logo" alt="pora"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="BotNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#preciosycombos">Precios y Combos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
+              <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           </ul>
+                <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                  <i  class="bi bi-cart "></i> 
+                </button>
+        </div>
       </div>
-    </div>
   </nav>
 
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Articulos del Carrito</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Productos</p>
+          <p>Productos</p>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Comprar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Seguir Comprando</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- carrusel -->
-  <div id="carouselExample" class="carousel slide my-5" data-bs-ride="carousel">
+ <div id="carouselExample" class="carousel slide my-5" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="./img/congelado.svg" class="d-block mx-auto carousel-img" alt="Frizados">
@@ -60,7 +97,6 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
   </div>
-
   <!-- ¿quienes somos? -->
   <section id="quienes-somos" class="py-5 my-5" style="background-color: #FAC172;">
     <div class="container text-center">
@@ -69,35 +105,80 @@
       <p>Principalmente apuntamos a un mercado mayorista. El chipá de “Porá” es un producto alimenticio con una receta totalmente única, original y sin TACC.</p>
     </div>
   </section>
+<!-- productos -->
+<section id="productos" class="my-5">
+  <div class="container">
+    <h2 style="color:#78C4B7;" class="text-center mb-5">Nuestros Productos</h2>
+    <div class="row">
 
-  <!-- productos -->
-  <section id="productos" class="my-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Nuestros Productos</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <img src="./img/chipa1.jpg" class="card-img-top cardimg" alt="Chipá">
-            <div class="card-body">
-              <h5 class="card-title">Frizados</h5>
-              <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, unde consectetur. Quas in voluptatem sit totam molestias! Tenetur velit animi nulla dicta iste cupiditate, asperiores minima suscipit non voluptatibus aperiam inventore? Asperiores modi maiores doloribus molestias laudantium iusto obcaecati temporibus harum incidunt laborum eum quam, officiis labore minus repudiandae aut?.</p>
-              <a href="#" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card">
-            <img src="./img/chipa2.jpg" class="card-img-top cardimg" alt="Horneados">
-            <div class="card-body">
-              <h5 class="card-title">Horneados</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum culpa rerum illum nihil officia labore veniam quibusdam maxime adipisci animi..</p>
-              <a href="#" class="btn btn-primary">Ver más</a>
-            </div>
+      <!-- Card 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="card" id="card1">
+          <!-- img de chipa-->
+          <img src="" class="card-img-top cardimg" alt="" />
+          <div class="card-body">
+            <!-- nombre chipa -->
+            <h5 class="card-title"></h5>
+            <!--descripcion-->
+            <p class="card-text"></p>
+            <!--añadir pdf con todos las caracteristicas -->
+            <a href="#" class="btn btn-primary">Ver más</a>
           </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card" id="card2">
+          <!-- img de chipa-->
+          <img src="" class="card-img-top cardimg" alt="" />
+          <div class="card-body">
+            <!-- nombre chipa -->
+            <h5 class="card-title"></h5>
+            <!--descripcion-->
+            <p class="card-text"></p>
+           <!--añadir pdf con todos las caracteristicas al apretar ver mas -->
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 mb-4">
+        <div class="card" id="card3">
+            <!-- img de chipa-->
+          <img src="" class="card-img-top cardimg" alt="" />
+          <div class="card-body">
+            <!-- nombre chipa -->
+            <h5 class="card-title"></h5>
+            <!--descripcion-->
+            <p class="card-text"></p>
+            <!--añadir pdf con todos las caracteristicas al apretar ver mas -->
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 mb-4">
+        <div class="card" id="card4">
+          <!-- img de chipa-->
+          <img src="" class="card-img-top cardimg" alt="" />
+          <div class="card-body">
+            <!-- nombre chipa -->
+            <h5 class="card-title"></h5>
+              <!--descripcion-->
+            <p class="card-text"></p>
+           <!--añadir pdf con todos las caracteristicas al apretar ver mas -->
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- footer -->
   <footer id="contacto" class="pt-4" style="background-color: #78C4B7;">
