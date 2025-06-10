@@ -45,6 +45,24 @@
     width: 60px;
     border-radius: 30%;
   }
+/*Modal*/
+  .producto-carrito{
+    margin: 15px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+  .producto-carrito p{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 7.5px;
+  }
+  .producto-carrito input, button{
+    display: flex;
+    justify-content: end;
+  }
 
 /* carrusel */
 
