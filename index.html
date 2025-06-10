@@ -35,33 +35,42 @@
       </div>
   </nav>
 
-  <!-- The Modal -->
+<!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
-
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Articulos del Carrito</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-
         <!-- Modal body -->
-        <div class="modal-body">
-          <p>Productos</p>
-          <p>Productos</p>
+        <div class="producto-carrito mb-3">
+          <p class="fw-bold">Frizados</p>
+          <div class="input-group cantidad-grupo" data-producto="frizados" style="max-width: 160px;">
+            <button class="btn btn-outline-secondary btn-restar" type="button">-</button>
+            <input type="text" class="form-control text-center cantidad-input" value="1" readonly>
+            <button class="btn btn-outline-secondary btn-sumar" type="button">+</button>
+          </div>
+        </div>
+        <div class="producto-carrito mb-3">
+          <p class="fw-bold">Horneados</p>
+          <div class="input-group cantidad-grupo" data-producto="horneados" style="max-width: 160px;">
+            <button class="btn btn-outline-secondary btn-restar" type="button">-</button>
+            <input type="text" class="form-control text-center cantidad-input" value="1" readonly>
+            <button class="btn btn-outline-secondary btn-sumar" type="button">+</button>
+          </div>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Comprar</button>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Seguir Comprando</button>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- productos -->
+<!-- productos -->
   <section id="productos">
       <div class="container my-5">
         <h2 class="text-center pb-4 pt-5">Nuestros Productos</h2>
@@ -71,7 +80,7 @@
               <img src="./img/chipa1.jpg" class="card-img-top cardimg" alt="Chipá">
               <div class="card-body">
                 <h5 class="card-title">Frizados</h5>
-                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, unde consectetur. Quas in voluptatem sit totam molestias! Tenetur velit animi nulla dicta iste cupiditate, asperiores minima suscipit non voluptatibus aperiam inventore? Asperiores modi maiores doloribus molestias laudantium iusto obcaecati temporibus harum incidunt laborum eum quam, officiis labore minus repudiandae aut?.</p>
+                <p class="card-text">producto precocido congelado, ideal para un desayuno o merienda rápida y deliciosa. Se trata de un pan tradicional guaraní elaborado con almidón de mandioca, huevos y queso. Se pueden congelar durante varios meses (hasta 3 meses) en el freezer. También se pueden conservar en heladera por unos días (hasta 5 días).</p>
                 <a href="#" class="btn btn-primary">Ver más</a>
               </div>
             </div>
@@ -81,7 +90,7 @@
               <img src="./img/chipa2.jpg" class="card-img-top cardimg" alt="Horneados">
               <div class="card-body">
                 <h5 class="card-title">Horneados</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum culpa rerum illum nihil officia labore veniam quibusdam maxime adipisci animi..</p>
+                <p class="card-text">Los chipas horneados son panecillos pequeños, de origen paraguayo, hechos con harina de mandioca (o fécula de yuca) y queso. Son muy populares en Paraguay, Argentina, Brasil y otros países de la región. Su textura es suave y ligeramente gomosa, con un sabor característico a queso.</p>
                 <a href="#" class="btn btn-primary">Ver más</a>
               </div>
             </div>
@@ -90,7 +99,7 @@
       </div>
   </section>
 
-  <!-- ¿quienes somos? -->
+<!-- ¿quienes somos? -->
   <section id="quienes-somos" class="p-3 mb-2" style="background-color: #e5b87abd;">
       <div class="container text-center">
         <h2>¿Quiénes Somos?</h2>
@@ -99,30 +108,30 @@
       </div>
   </section>
 
-  <!-- Fila de Imagenes -->
+<!-- Fila de Imagenes -->
+  <h2 class="SubCarr container-fluid my-4" id="preciosycombos">Precios y Combos</h2>
   <section class="categoria-destacada d-none d-md-block">
       <div class="container-fluid" id="PYC">
-        <h2 class="SubCarr" id="preciosycombos">Precios y Combos</h2>
-        <div class="row text-center gx-5">
+        <div class="row text-center gx-5 mx-1">
           <!--Col-6 pantalla Celular (2 Elementos en cada columna) col-3 pantallas mas grandes(Un elemento en cada 3 columnas)-->
-          <div class="col-6 col-md-3 mb-4">
+          <div class="col-md-3 mb-4">
             <img src="./img/congelado.svg" class="img-fluid mb-2" alt="Frizados">
           </div>
-          <div class="col-6 col-md-3 mb-4">
+          <div class="col-md-3 mb-4">
             <img src="./img/horneado.svg" class="img-fluid mb-2" alt="Horneados">
           </div>
-          <div class="col-6 col-md-3 mb-4">
+          <div class="col-md-3 mb-4">
             <img src="./img/mayorista.svg" class="img-fluid mb-2" alt="Combos">
           </div>
-          <div class="col-6 col-md-3 mb-4">
+          <div class="col-md-3 mb-4">
             <img src="./img/combo.svg" class="img-fluid mb-2" alt="Mayoristas">
           </div>
         </div>
       </div>
   </section>
 
-  <!-- Carrusel en Celular-->
-  <div class="container-fluid d-block d-md-none my-5 py-2">
+<!-- Carrusel en Celular-->
+  <div class="container-fluid d-block d-md-none p-5 pt-1">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -138,23 +147,20 @@
           <img src="./img/combo.svg" class="d-block w-100" alt="...">
         </div>
       </div>
-    </div>
-    <div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" style="margin-top: 1800px">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Anterior</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" style="margin-top: 1800px">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">Siguiente</span>
       </button>
     </div>
   </div>
-
-  <!-- footer -->
+<!-- footer -->
   <footer id="contacto" class="pt-4 pb-3" style="background-color: #78c4b7bd;">
       <div class="container text-white">
-        <div class="row text-center text-md-start">
+        <div class="row text-center text-md-start mx-auto">
           <div class="col-md-6 d-flex flex-column justify-content-center">
             <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp:</strong> 266-4943616</p>
             <p><i class="bi bi-clock me-2"></i><strong>Horarios:</strong> Lun a Sáb, 8:30 AM a 13:00 PM y 16:30 PM a 21:00 PM</p>
@@ -163,9 +169,8 @@
             <a href="https://maps.app.goo.gl/j3B8qAidLMkoVyiM7" target="_blank" class="btn btn-outline-light btn-sm" id="BMapa">
               Ver en Google Maps
             </a>
-
           </div>
-          <div class="col-md-6 text-center">
+          <div class="col-md-6 text-center" id="lfooter">
             <img src="./img/logo.jpg" alt="Logo" class="img-fluid rounded" style="max-width: 150px;">
           </div>
           <div class="col-12 text-center mt-3">
@@ -174,8 +179,7 @@
         </div>
       </div>
   </footer>
+<!-- Archivo JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
