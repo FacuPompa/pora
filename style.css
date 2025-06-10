@@ -1,25 +1,17 @@
-/* variables */
-:root {
-  --colorverde: #839A42;
-  --colorfondo: #e2e2e2;
-  --coloramarillo: #FAC172;
-  --colorturquesa: #78C4B7;
-  --colorverdehover: #6e8235;
+/* general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* general */
-body {
+  body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--colorfondo);
-    background-image: radial-gradient(circle, rgba(131, 154, 66, 0.1) 1px, transparent 1px),
-                      radial-gradient(circle, rgba(131, 154, 66, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px; 
-    background-position: 0 0, 10px 10px;
     color: #333;
   }
-  
+
   h2 {
-    color: var(--colorverde);
+    color: white;
     font-weight: 600;
   }
   
@@ -28,9 +20,16 @@ body {
     line-height: 1.6;
   }
   
+  .productos{
+    margin-top: 50px;
+  }
+
+
   /* nav */
   .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    justify-content: center;
   }
 
   nav .nav-link {
@@ -39,44 +38,65 @@ body {
   }
   
   nav .nav-link:hover {
-    color: var(--coloramarillo);
+    color: #FAC172;
   }
 
   .logo{
-    width: 100px;
+    width: 60px;
     border-radius: 30%;
   }
 
-  .quienessomos {
-    background-color: var(--coloramarillo);
-  }
-
    /* carrusel */
-
-   .carousel-control-prev {
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%); 
-    left: 5%;
-    color: var(--colorverde);
-  }
   
-  .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5%;
-    color: var(--colorverde);
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: var(--colorverde); 
-    border-radius: 50%;
+  .slider {
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
   }
 
-  .carousel-img{
-    
+  .slider .slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    -webkit-animation: scroll 20s linear infinite;
+    width: calc(200px * 14);
+  }
+
+  .slider .slide {
+    width: 400px;
+    margin: 40px;
+  }
+
+  .slider .slide img {
+    width: 100%;
+  }
+
+  @keyframes scroll{
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+    }
+  }
+
+
+  /* boton whatsapp */
+  .botonwpp {
+    position: fixed;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    padding-top: 7px;
+    font-size: 30px;
+    border-radius: 50px;
+    color: #ffff;
+    background-color: #25d366;
+    box-shadow: 2px 2px 3px #999f;
   }
   
   /* cards */
@@ -92,7 +112,7 @@ body {
   }
 
   .card img {
-    height: 650px;
+    max-height: 300px;
     object-fit: cover;
   }
   
@@ -105,39 +125,33 @@ body {
   }
   
   .btn-primary {
-    background-color: var(--colorverde);
+    background-color: #C7573B;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .btn-primary:hover {
-    background-color: var(--colorverdehover);
+    background-color:#78C4B7 ;
     transform: scale(1.05);
   }
   
-  /* boton whatsapp */
-  .botonwpp {
-    position: fixed;
-    text-align: center;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    font-size: 30px;
-    border-radius: 50px;
-    color: #ffff;
-    background-color: #25d366;
-    box-shadow: 2px 2px 3px #999f;
-  }
-
-
-
   /* footer */
   footer {
     font-size: 14px;
-    background-color: var(--colorturquesa);
   }
   
   footer p {
     margin-bottom: 10px;
+  }
+  #BMapa{
+    max-width: 65%;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
