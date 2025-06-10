@@ -1,0 +1,157 @@
+/* general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+
+  h2 {
+    color: white;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .productos{
+    margin-top: 50px;
+  }
+
+
+  /* nav */
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    justify-content: center;
+  }
+
+  nav .nav-link {
+    color: #ffff;
+    transition: color 0.3s ease;
+  }
+  
+  nav .nav-link:hover {
+    color: #FAC172;
+  }
+
+  .logo{
+    width: 60px;
+    border-radius: 30%;
+  }
+
+   /* carrusel */
+  
+  .slider {
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slider .slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    -webkit-animation: scroll 20s linear infinite;
+    width: calc(200px * 14);
+  }
+
+  .slider .slide {
+    width: 400px;
+    margin: 40px;
+  }
+
+  .slider .slide img {
+    width: 100%;
+  }
+
+  @keyframes scroll{
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+    }
+  }
+
+
+  /* boton whatsapp */
+  .botonwpp {
+    position: fixed;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    padding-top: 7px;
+    font-size: 30px;
+    border-radius: 50px;
+    color: #ffff;
+    background-color: #25d366;
+    box-shadow: 2px 2px 3px #999f;
+  }
+  
+  /* cards */
+  .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .card img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 14px;
+  }
+  
+  .btn-primary {
+    background-color: #C7573B;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color:#78C4B7 ;
+    transform: scale(1.05);
+  }
+  
+  /* footer */
+  footer {
+    font-size: 14px;
+  }
+  
+  footer p {
+    margin-bottom: 10px;
+  }
+  #BMapa{
+    max-width: 65%;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }

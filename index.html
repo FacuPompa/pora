@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porã, sabores del litoral</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #839a42c9;">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#"><img src="./img/logo.jpg" class="logo" alt="pora"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="BotNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#preciosycombos">Precios y Combos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
+              <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        <button type="button" class="btn btn-primary mx-4 position-relative" data-bs-toggle="modal" data-bs-target="#myModal">
+          <i class="bi bi-cart"></i>
+          <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.8rem;display:none;">
+            0
+          </span>
+        </button>
+        </div>
+      </div>
+  </nav>
+
+  <!--botón whatsapp  -->
+      <a href="" class="botonwpp" target="_blank">
+      <i class="bi bi-whatsapp buttonfloat"></i>
+    </a>  
+
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Articulos del Carrito</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Productos</p>
+          <p>Productos</p>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Comprar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Seguir Comprando</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+
+    <!-- ¿quienes somos? -->  
+  <section id="quienes-somos" class="py-5 mb-5" style="background-color: #FAC172;">
+    <div class="container text-center">
+      <h2 class="mb-5" >¿Quiénes Somos?</h2>
+      <div class="row align-items-center">
+        <div class="col">
+          <p class="lead text-white">Nos dedicamos a la elaboración artesanal de chipá congelados y empaquetados. Principalmente apuntamos a un mercado mayorista. El chipá de “Porá” es un producto alimenticio con una receta totalmente única, original y sin TACC.</p>
+        </div>
+        <div class="col">
+          <img class="w-50 rounded-3" src="./img/local.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+<!-- precios y combos --> 
+  <h2 class="container-fluid mb-5 text-center" style="color: #78C4B7;" id="preciosycombos">Precios y Combos</h2>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide"><img src="./img/combo.svg" alt="Frizados"></div>
+      <div class="slide"><img src="./img/congelado.svg" alt="Horneados"></div>
+      <div class="slide"><img src="./img/horneado.svg" alt="Combos"></div>
+      <div class="slide"><img src="./img/mayorista.svg" alt="Mayoristas"></div>
+    </div>
+  </div>
+
+
+<!-- productos -->
+<section id="productos" class="my-5">
+  <div class="container">
+    <h2 style="color:#78C4B7;" class="text-center mb-5">Nuestros Productos</h2>
+    <div class="row">
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- footer -->
+  <footer id="contacto" class="pt-4" style="background-color: #78C4B7;">
+    <div class="container text-white">
+      <div class="row">
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong> Estado de Israel N° 1426- San Luis, Capital</p>
+          <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp y envíos:</strong> 266-4943616</p>
+          <p><i class="bi bi bi-clock me-2"></i><strong>Abrimos:</strong> Lunes a Sábados: 8:30 a 13:00 y 16:30 a 21:00</p>
+          <p><i class="bi bi-envelope-fill me-2"></i><strong>Correo:</strong> porasaboresdel.litoral@gmail.com</p>
+        </div>
+        <div class="col-md-6">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.1234567890123!2d-66.123456789!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d1234567890123%3A0x123456789abcdef!2sEstado%20de%20Israel%201426%2C%20San%20Luis%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890123" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="col-md-12 text-center mt-5 mb-0">
+          <p class="opacity-75">&copy; 2025 Porã. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
