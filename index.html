@@ -11,13 +11,6 @@
   <script src="main.js"></script>
 </head>
 <body>
-<p id="prueba"></p>
-<p id="prueba2"></p>
-
-
-
-
-
   <!-- nav -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #839a42c9;">
       <div class="container">
@@ -65,39 +58,36 @@
       </div>
     </div>
   </div>
-
-  <!-- carrusel -->
- <div id="carouselExample" class="carousel slide my-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./img/congelado.svg" class="d-block mx-auto carousel-img" alt="Frizados">
-        <div class="carousel-caption d-none d-md-block">
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/horneado.svg" class="d-block mx-auto carousel-img" alt="Horneados">
-        <div class="carousel-caption d-none d-md-block">
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/combo.svg" class="d-block mx-auto carousel-img" alt="Combos">
-        <div class="carousel-caption d-none d-md-block">
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./img/mayorista.svg" class="d-block mx-auto carousel-img" alt="Mayoristas">
-        <div class="carousel-caption d-none d-md-block">
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
+  <br><br><br>
+ <!-- carrusel -->
+ <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <!-- ¿quienes somos? -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./img/combo.svg" class="d-block mx-auto carousel-img" alt="combos">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/congelado.svg" class="d-block mx-auto carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/mayorista.svg" class="d-block mx-auto carousel-img" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  <!-- ¿quienes somos? -->  
   <section id="quienes-somos" class="py-5 my-5" style="background-color: #FAC172;">
     <div class="container text-center">
       <h2>¿Quiénes Somos?</h2>
@@ -162,7 +152,7 @@
       <!-- Card 4 -->
       <div class="col-md-6 mb-4">
         <div class="card" id="card4">
-          <!-- img de chipa-->
+           <!-- img de chipa-->
           <img src="" class="card-img-top cardimg" alt="" />
           <div class="card-body">
             <!-- nombre chipa -->
