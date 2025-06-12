@@ -45,23 +45,26 @@
     width: 60px;
     border-radius: 30%;
   }
-/*Modal*/
+/*Modal del carrito*/
   .producto-carrito{
-    margin: 15px 15px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 5px;
+    width: 100%;
+  }
+  .producto-carrito h5{
+    margin: 15px 0px;
   }
   .producto-carrito p{
     display: flex;
-    flex-direction: row;
     justify-content: start;
-    margin: 7.5px;
+    margin: 10px 0px;
   }
-  .producto-carrito input, button{
-    display: flex;
-    justify-content: end;
+  .divcreate{
+    max-width: 400px;
+    padding: 5px;
   }
 
 /* carrusel */
@@ -114,6 +117,11 @@
   }
   .card-text {
     font-size: 14px;
+  }
+  .card-precio {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: end;
   }
   .btn-primary {
     background-color: #C7573B;
