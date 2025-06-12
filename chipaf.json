@@ -1,0 +1,31 @@
+[
+    {
+        "imagen":"./img/chipa1.jpg",
+        "sabor":"clasico",
+        "titulo":"Frizados",
+        "Descripcion":"Producto precocido congelado. Se pueden congelar durante varios meses (hasta 3 meses) en el freezer y se pueden conservar en heladera por unos días (hasta 5 días).",
+        "precio": "$9200 x kg"
+    },
+    {
+        "imagen":"./img/chipa2.jpg",
+        "sabor": "Roquefort",
+        "titulo":"Horneados",
+        "Descripcion":"Los chipas horneados son panecillos pequeños, de origen paraguayo, hechos con harina de mandioca (o fécula de yuca) con un sabor característico a queso.",
+        "precio": "$9600 x kg"
+    },
+    {
+        "imagen": "./img/chipa-salame.png",
+        "sabor": "Salame",
+        "titulo":"Salame",
+        "Descripcion": "Chipa con trozos de salame, ideal para picadas",
+        "precio": "$9440 x kg"
+
+    },
+    {
+        "imagen": "./img/chipa-oregano.jpg",
+        "sabor": "Orégano",
+        "titulo":"Oregano",
+        "Descripcion": "Chipa saborizada con orégano y mezcla de quesos",
+        "precio": "$9440 x kg"
+    }
+]
