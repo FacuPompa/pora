@@ -3,7 +3,8 @@
     "nro": 1,
     "sabor": "Clasico",
     "descripcion": "Chipa tradicional con mucho queso, crocante por fuera y suave por dentro",
-    "img": "./img/chipa-clasico.jpg"
+    "img": "./img/chipa-clasico.jpg",
+    "precio":2500
   },
   {
     "nro": 2,
@@ -23,4 +24,7 @@
     "descripcion": "Chipa saborizada con orégano y mezcla de quesos",
     "img": "./img/chipa-oregano.jpg"
   }
+  
+
+ 
 ]
