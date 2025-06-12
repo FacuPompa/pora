@@ -21,7 +21,7 @@ function createCard(sabor, descripcion, imgSrc, index) {
     col.className = "col-md-6 mb-4";
 
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card cardd";
     card.id = `chipa-${index + 1}`;
 
     const img = document.createElement("img");
@@ -59,7 +59,7 @@ function createCard(sabor, descripcion, imgSrc, index) {
 
 function actualizarCartCount() {
     const cartCount = document.getElementById("cart-count");
-    let total = agregados.reduce((acc, item) => acc + (item.gramos / 500), 0);
+    let total = agregados.reduce((acc, item) => acc + (item.gramos / 100), 0);
     if (total > 0) {
         cartCount.style.display = "inline-block";
         cartCount.textContent = "+" + total;
@@ -74,9 +74,9 @@ function agregarAlCarrito(event) {
     const index = parseInt(event.target.dataset.index);
     const found = agregados.find(item => item.index === index);
     if (found) {
-        found.gramos += 500;
+        found.gramos += 100;
     } else {
-        agregados.push({ index, gramos: 500 });
+        agregados.push({ index, gramos: 100 });
     }
     actualizarCarritoModal();
     actualizarCartCount();
@@ -93,7 +93,7 @@ function agregarUno(event) {
     const index = parseInt(event.target.dataset.index);
     const found = agregados.find(item => item.index === index);
     if (found) {
-        found.gramos += 500;
+        found.gramos += 100;
         actualizarCarritoModal();
         actualizarCartCount();
     }
@@ -103,8 +103,8 @@ function restarUno(event) {
     event.preventDefault();
     const index = parseInt(event.target.dataset.index);
     const found = agregados.find(item => item.index === index);
-    if (found && found.gramos > 500) {
-        found.gramos -= 500;
+    if (found && found.gramos > 100) {
+        found.gramos -= 100;
     } else {
         const idx = agregados.findIndex(item => item.index === index);
         if (idx !== -1) agregados.splice(idx, 1);
@@ -188,6 +188,16 @@ function actualizarCarritoModal() {
     totalDiv.innerHTML = `<strong>Total: ${total}g</strong>`;
     modalBody.appendChild(totalDiv);
     
+}
+
+function compraExitosa() {
+    const comprar = document.getElementById("btncomprar");
+    if (cartCount === 0) {
+        comprar.alert("El carrito está vacío.");
+    }else {
+        alert("¡Gracias por tu compra!");
+        vaciarCarrito();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", actualizarCartCount);
