@@ -1,4 +1,4 @@
-//carga json
+//carga json de cards
 fetch('chipa.json')
   // convierte objeto
   .then(response => response.json())
@@ -38,8 +38,8 @@ fetch('chipa.json')
   });
 
 
-//cargar comentarios 
-// carga archivo
+
+// carga json de comentarios
 fetch('reseñas.json')
   .then(response2 => response2.json()) //convierte objeto
   .then(objetos => { // arreglo de objetos
