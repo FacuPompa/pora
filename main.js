@@ -1,195 +1,101 @@
-let chipasData = [];
-const agregados = [];
+//carga json
+fetch('chipa.json')
+  // convierte objeto
+  .then(response => response.json())
 
-fetch('./chipa.json')
-.then(response => response.json())
-.then(chipas => {
-    chipasData = chipas;
-    const row = document.querySelector("#productos .row");
-    row.innerHTML = "";
-    chipas.forEach((chipa, i) => {
-        const card = createCard(chipa.sabor, chipa.descripcion, chipa.img, i);
-        row.appendChild(card);
-    });
-})
-.catch(error => {
-    console.error("Error cargando los productos:", error);
-});
+  // se ejecuta la funcion con el arreglo de chipas
+  .then(chipas => {
 
-function createCard(sabor, descripcion, imgSrc, index) {
-    const col = document.createElement("div");
-    col.className = "col-md-6 mb-4";
+    let container = document.getElementById("chipa-container");
 
-    const card = document.createElement("div");
-    card.className = "card";
-    card.id = `chipa-${index + 1}`;
+    // variable para acumular texto html
+    let card = "";
 
-    const img = document.createElement("img");
-    img.className = "card-img-top cardimg";
-    img.src = imgSrc;
-    img.alt = sabor;
+    // Recorre cada objeto chipa del arreglo
+    chipas.forEach(chipa => {
 
-    const cardBody = document.createElement("div");
-    cardBody.className = "card-body";
-
-    const h5 = document.createElement("h5");
-    h5.className = "card-title";
-    h5.textContent = `Chipá ${sabor}`;
-
-    const p = document.createElement("p");
-    p.className = "card-text";
-    p.textContent = descripcion;
-
-    const btn = document.createElement("a");
-    btn.href = "#";
-    btn.className = "btn btn-primary";
-    btn.textContent = "Agregar al carrito";
-    btn.dataset.index = index;
-    btn.addEventListener("click", agregarAlCarrito);
-
-    cardBody.appendChild(h5);
-    cardBody.appendChild(p);
-    cardBody.appendChild(btn);
-    card.appendChild(img);
-    card.appendChild(cardBody);
-    col.appendChild(card);
-
-    return col;
-}
-
-function actualizarCartCount() {
-    const cartCount = document.getElementById("cart-count");
-    let total = agregados.reduce((acc, item) => acc + (item.gramos / 500), 0);
-    if (total > 0) {
-        cartCount.style.display = "inline-block";
-        cartCount.textContent = "+" + total;
-    } else {
-        cartCount.style.display = "none";
-        cartCount.textContent = "0";
-    }
-}
-
-function agregarAlCarrito(event) {
-    event.preventDefault();
-    const index = parseInt(event.target.dataset.index);
-    const found = agregados.find(item => item.index === index);
-    if (found) {
-        found.gramos += 500;
-    } else {
-        agregados.push({ index, gramos: 500 });
-    }
-    actualizarCarritoModal();
-    actualizarCartCount();
-}
-
-function vaciarCarrito() {
-    agregados.length = 0;
-    actualizarCarritoModal();
-    actualizarCartCount();
-}
-
-function agregarUno(event) {
-    event.preventDefault();
-    const index = parseInt(event.target.dataset.index);
-    const found = agregados.find(item => item.index === index);
-    if (found) {
-        found.gramos += 500;
-        actualizarCarritoModal();
-        actualizarCartCount();
-    }
-}
-
-function restarUno(event) {
-    event.preventDefault();
-    const index = parseInt(event.target.dataset.index);
-    const found = agregados.find(item => item.index === index);
-    if (found && found.gramos > 500) {
-        found.gramos -= 500;
-    } else {
-        const idx = agregados.findIndex(item => item.index === index);
-        if (idx !== -1) agregados.splice(idx, 1);
-    }
-    actualizarCarritoModal();
-    actualizarCartCount();
-}
-function eliminarItem(event) {
-    event.preventDefault();
-    const index = parseInt(event.target.dataset.index);
-    const idx = agregados.findIndex(item => item.index === index);
-    if (idx !== -1) agregados.splice(idx, 1);
-    actualizarCarritoModal();
-    actualizarCartCount();
-}
-
-function actualizarCarritoModal() {
-    const modalBody = document.querySelector(".modal-body");
-    modalBody.innerHTML = "";
-
-    if (agregados.length === 0) {
-        modalBody.innerHTML = "<p>El carrito está vacío.</p>";
-        return;
-    }
-
-    let total = 0;
-    agregados.forEach(item => {
-        const chipa = chipasData[item.index];
-        total += item.gramos;
-
-        const div = document.createElement("div");
-        div.className = "d-flex align-items-center mb-3";
-
-        const img = document.createElement("img");
-        img.src = chipa.img;
-        img.alt = chipa.sabor;
-        img.style.width = "60px";
-        img.style.height = "60px";
-        img.style.objectFit = "cover";
-        img.className = "me-3 rounded";
-
-        const info = document.createElement("div");
-        info.className = "flex-grow-1";
-        info.innerHTML = `<strong>${chipa.sabor}</strong><br>${item.gramos}g`;
-
-        const btnGroup = document.createElement("div");
-        btnGroup.className = "btn-group ms-3";
-        btnGroup.role = "group";
-
-        const btnRestar = document.createElement("button");
-        btnRestar.className = "btn btn-outline-secondary btn-sm";
-        btnRestar.textContent = "-";
-        btnRestar.dataset.index = item.index;
-        btnRestar.addEventListener("click", restarUno);
-
-        const btnSumar = document.createElement("button");
-        btnSumar.className = "btn btn-outline-secondary btn-sm";
-        btnSumar.textContent = "+";
-        btnSumar.dataset.index = item.index;
-        btnSumar.addEventListener("click", agregarUno);
-
-        const btnEliminar = document.createElement("button");
-        btnEliminar.className = "btn btn-outline-danger btn-sm";
-        btnEliminar.innerHTML = '<i class="bi bi-trash"></i>';
-        btnEliminar.dataset.index = item.index;
-        btnEliminar.addEventListener("click", eliminarItem);
-
-        btnGroup.appendChild(btnRestar);
-        btnGroup.appendChild(btnSumar);
-
-        div.appendChild(img);
-        div.appendChild(info);
-        div.appendChild(btnGroup);
-
-        modalBody.appendChild(div);
+      // agrega card al html
+      card += `
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <!--img chipa -->
+            <img src="${chipa.img}" class="card-img-top cardimg" alt="${chipa.sabor}">
+            <div class="card-body">
+              <!-- sabor -->
+              <h5 class="card-title">${chipa.sabor}</h5>
+              <!-- descripcion -->
+              <p class="card-text">${chipa.descripcion}</p>
+              <!-- boton que podria añadir pdf -->
+              <a href="#" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+      `;
     });
 
-    // muestra total
-    const totalDiv = document.createElement("div");
-    totalDiv.className = "mt-4 text-end";
-    totalDiv.innerHTML = `<strong>Total: ${total}g</strong>`;
-    modalBody.appendChild(totalDiv);
-    
-}
+    // inserta cards
+    container.innerHTML = card;
+  });
 
-document.addEventListener("DOMContentLoaded", actualizarCartCount);
 
-document.getElementById("myModal").addEventListener("show.bs.modal", actualizarCarritoModal);
+
+
+
+
+
+
+
+
+
+
+  
+// carga archivo
+fetch('reseñas.json')
+  .then(response2 => response2.json()) //convierte objeto
+  .then(objetos => { // arreglo de objetos
+    let divid = document.getElementById("reseñasdiv");
+    //variable acumulativa
+    let cargar = "";
+
+    // recorre cada objeto del arreglo
+    objetos.forEach(reseñas => {
+
+      // si el numero es par, se añade otro slide al carrusel
+      if (reseñas.nro % 2 === 0) {
+        // si la primera reseña es == se agrega active
+        if (reseñas.nro === 0) {
+          cargar += `
+            <div class="carousel-item active">
+              <div class="row g-4 justify-content-center">`;
+        } else {
+          // si no se cumple no se agrega class active
+          cargar += `
+            <div class="carousel-item">
+              <div class="row g-4 justify-content-center">`;
+        }
+      }
+
+      // acumula o concatena info de las reseñas
+      cargar += `
+        <div class="col-md-6">
+          <div style="background-color: #839a42c9;" class="card ">
+            <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
+              <h5 class="card-title fw-bold text-dark">${reseñas.nombre}</h5>
+              <p class="card-text text-muted">${reseñas.comentario}</p>
+              <div class="text-warning fs-5">${reseñas.estrellas}</div>
+            </div>
+          </div>
+        </div>`;
+
+      // si el nro es impar cierra los div
+      if (reseñas.nro % 2 !== 0) {
+        cargar += `
+              </div>
+            </div>`;
+      }
+    });
+
+    // inserta las cards
+    divid.innerHTML = cargar;
+  });
+
