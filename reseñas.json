@@ -1,0 +1,62 @@
+[
+  {
+    "nro": 0,
+    "nombre": "Jeremias",
+    "comentario": "Muy buen sabor, recién horneados. Se notaba que estaban hechos con ingredientes frescos. El aroma y la textura fueron excelentes, ideales para compartir en una merienda con amigos.",
+    "estrellas": "★★★★"
+  },
+  {
+    "nro": 1,
+    "nombre": "Roberto",
+    "comentario": "Perfectos para el mate, crujientes por fuera y suaves por dentro. Me recordaron a los chipás que comía de chico. Excelente presentación y sabor muy casero.",
+    "estrellas": "★★★★★"
+  },
+  {
+    "nro": 2,
+    "nombre": "José",
+    "comentario": "Estaban un poco fríos cuando llegaron, pero igual eran muy sabrosos. La masa tenía buena consistencia y el sabor del queso era notable, sin ser empalagoso.",
+    "estrellas": "★★★★"
+  },
+  {
+    "nro": 3,
+    "nombre": "Emilia",
+    "comentario": "Riquísimos, pero tardaron en llegar más de lo esperado. Aun así, la espera valió la pena porque el sabor estaba muy bien logrado. Ideal para acompañar una tarde tranquila.",
+    "estrellas": "★★★"
+  },
+  {
+    "nro": 4,
+    "nombre": "Camila",
+    "comentario": "A mis hijos les encantaron. Me sorprendió lo bien que conservaron la textura después de recalentarlos. Muy buena opción para tener en el freezer y sacar en cualquier momento.",
+    "estrellas": "★★★★★"
+  },
+  {
+    "nro": 5,
+    "nombre": "Martín",
+    "comentario": "Muy buena atención al cliente y chipás calientes, recién salidos del horno. Se nota que le ponen dedicación al producto. Los recomiendo para cualquier ocasión.",
+    "estrellas": "★★★★"
+  },
+  {
+    "nro": 6,
+    "nombre": "Lucía",
+    "comentario": "Los saborizados son una bomba. Probé los de orégano y queso azul, y fueron una grata sorpresa. Se nota que están innovando sin perder la esencia del chipá tradicional.",
+    "estrellas": "★★★★★"
+  },
+  {
+    "nro": 7,
+    "nombre": "Felipe",
+    "comentario": "Un poco salados para mi gusto, aunque reconozco que tienen buena textura. Me gustaría que ofrecieran una versión con menos sal para quienes preferimos sabores más suaves.",
+    "estrellas": "★★★"
+  },
+  {
+    "nro": 8,
+    "nombre": "Nadia",
+    "comentario": "Muy buena presentación y sabor. El empaque era práctico y los chipás llegaron en perfecto estado. Ideales para llevar al trabajo o a una reunión sin complicaciones.",
+    "estrellas": "★★★★★"
+  },
+  {
+    "nro": 9,
+    "nombre": "Bruno",
+    "comentario": "Congelados llegaron perfectos. Solo los calenté unos minutos y quedaron como recién hechos. Excelente opción para tener siempre listos en casa sin perder calidad.",
+    "estrellas": "★★★★"
+  }
+]
