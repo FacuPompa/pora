@@ -38,17 +38,7 @@ fetch('chipa.json')
   });
 
 
-
-
-
-
-
-
-
-
-
-
-  
+//cargar comentarios 
 // carga archivo
 fetch('reseñas.json')
   .then(response2 => response2.json()) //convierte objeto
