@@ -42,8 +42,8 @@
   }
 
   .logo{
-    width: 60px;
-    border-radius: 30%;
+    width: 50px;
+    border-radius: 20%;
   }
 
    /* carrusel */
@@ -59,7 +59,7 @@
     display: flex;
     animation: scroll 20s linear infinite;
     -webkit-animation: scroll 20s linear infinite;
-    width: calc(200px * 14);
+    width: calc(200px * 16);
   }
 
   .slider .slide {
@@ -155,3 +155,14 @@
       transform: translateX(-100%);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .botonwpp{
+      visibility: hidden;
+      }
+
+      .cardd {
+        width: 50%;
+        float: left;
+      }
+    }
