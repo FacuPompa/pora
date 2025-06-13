@@ -21,7 +21,7 @@ function createCard(sabor, descripcion, imgSrc, index) {
     col.className = "col-md-6 mb-4";
 
     const card = document.createElement("div");
-    card.className = "card cardd";
+    card.className = "card";
     card.id = `chipa-${index + 1}`;
 
     const img = document.createElement("img");
@@ -130,10 +130,16 @@ function actualizarCarritoModal() {
         return;
     }
 
-    let total = 0;
+    let totalGramos = 0;
+    let totalPrecio = 0;
     agregados.forEach(item => {
         const chipa = chipasData[item.index];
-        total += item.gramos;
+        totalGramos += item.gramos;
+
+        const precioPor100g = parseInt(chipa.precio.replace("$", ""));
+        const cantidadPaquetes = item.gramos / 100;
+        const precioItem = precioPor100g * cantidadPaquetes;
+        totalPrecio += precioItem;
 
         const div = document.createElement("div");
         div.className = "d-flex align-items-center mb-3";
@@ -148,7 +154,7 @@ function actualizarCarritoModal() {
 
         const info = document.createElement("div");
         info.className = "flex-grow-1";
-        info.innerHTML = `<strong>${chipa.sabor}</strong><br>${item.gramos}g`;
+        info.innerHTML = `<strong>${chipa.sabor}</strong><br>${item.gramos}g<br><span class="text-success">Precio: $${precioItem.toFixed(0)}</span>`;
 
         const btnGroup = document.createElement("div");
         btnGroup.className = "btn-group ms-3";
@@ -185,19 +191,8 @@ function actualizarCarritoModal() {
     // muestra total
     const totalDiv = document.createElement("div");
     totalDiv.className = "mt-4 text-end";
-    totalDiv.innerHTML = `<strong>Total: ${total}g</strong>`;
+    totalDiv.innerHTML = `<strong>Total: ${totalGramos}g</strong><br><strong>Total: $${totalPrecio.toFixed(0)}</strong>`;
     modalBody.appendChild(totalDiv);
-    
-}
-
-function compraExitosa() {
-    const comprar = document.getElementById("btncomprar");
-    if (cartCount === 0) {
-        comprar.alert("El carrito está vacío.");
-    }else {
-        alert("¡Gracias por tu compra!");
-        vaciarCarrito();
-    }
 }
 
 document.addEventListener("DOMContentLoaded", actualizarCartCount);
