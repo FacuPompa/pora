@@ -1,82 +1,65 @@
 /* general */
-  *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
   body {
     font-family: 'Poppins', sans-serif;
-    background-image: url('img/pexels-fwstudio-33348-172276.jpg');
+    background-image: url('./img/fondo.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     color: #333;
   }
+
   h2 {
     color: white;
     font-weight: 600;
-    text-align: center;
   }
+  
   p {
     font-size: 16px;
     line-height: 1.6;
   }
+  
   .productos{
     margin-top: 50px;
   }
-
-/* nav */
-
+  /* nav */
   .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-height: 60px;
+    height: 60px;
     justify-content: center;
   }
+
   nav .nav-link {
     color: #ffff;
     transition: color 0.3s ease;
   }
+  
   nav .nav-link:hover {
     color: #FAC172;
   }
-  .logo{
-    width: 60px;
-    border-radius: 30%;
-  }
-/*Modal del carrito*/
-  .producto-carrito{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 5px;
-    width: 100%;
-  }
-  .producto-carrito h5{
-    margin: 15px 0px;
-  }
-  .producto-carrito p{
-    display: flex;
-    justify-content: start;
-    margin: 10px 0px;
-  }
-  .divcreate{
-    max-width: 400px;
-    padding: 5px;
-  }
 
-/* carrusel */
+  .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  
+}
 
+
+   /* carrusel */
+  
   .SubCarr{
     text-align:center;
+    padding: 20px 0px 10px 0px;
+    margin: 20px auto;
+    width: 40%;
   }
-  .carousel-img {
-    max-height:500px;
-    width: auto;
-    object-fit: contain;
-  }
+
+.carousel-img {
+  max-height:500px;
+  width: auto;
+  object-fit: contain;
+}
   .carousel-control-prev {
     position: absolute;
     top: 50%; 
@@ -84,6 +67,7 @@
     left: 5%;
     color: #839A42;
   }
+  
   .carousel-control-next {
     position: absolute;
     top: 50%;
@@ -91,53 +75,54 @@
     right: 5%;
     color: #839A42;
   }
+  
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     background-color: #839A42; 
     border-radius: 50%;
   }
-
-/* cards */
-
+  
+  /* cards */
   .card {
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+
   .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   }
+
   .card img {
     max-height: 300px;
     object-fit: cover;
   }
+  
   .card-title {
     font-weight: 600;
   }
+  
   .card-text {
     font-size: 14px;
   }
-  .card-precio {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    text-align: end;
-  }
+  
   .btn-primary {
     background-color: #C7573B;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
+  
   .btn-primary:hover {
-    background-color: #6e8235;
+    background-color:#78C4B7 ;
     transform: scale(1.05);
   }
-
-/* footer */
-
+  
+  /* footer */
   footer {
     font-size: 14px;
   }
+  
   footer p {
     margin-bottom: 10px;
   }
@@ -145,36 +130,10 @@
     max-width: 65%;
   }
 
-@media screen and (max-width: 991.98px){
-/*navbar*/
-  .navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px 0px;
-  }
-  .logo{
-    width: 55px;
-    border-radius: 30%;
-  }
-  li > button{
-    margin-bottom: 10px;
+  #reseñasdiv {
+     overflow: hidden;
   }
 
-/*Bton del mapa en el footer*/
-  #BMapa{
-    margin: auto;
-    margin-bottom: 15px;
-  }
-}
-@media (min-width: 992px){
-  .navbar{
-    height: 60px;
-  }
-  /*footer*/
-  #lfooter{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-  }
-}
+
+
+
