@@ -25,8 +25,8 @@
               <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
               <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           </ul>
-                <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalCarr">
-                  <i  class="bi bi-cart "></i> 
+                <button  type="button" class="btn btn-primary btoncarrito" data-bs-toggle="modal" data-bs-target="#myModalCarr">
+                  <i  class="bi bi-cart "></i> Carrito 
                 </button>
         </div>
       </div>
@@ -60,7 +60,7 @@
 
 <!-- Modal de eleccion para la cantidad a comprar -->
   <div class="modal" id="myModalCant">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
@@ -82,7 +82,7 @@
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-success confirmar-agregar">Agregar</button>
+          <button class="btn btn-success confirmar-agregar" data-bs-dismiss="modal">Agregar</button>
         </div>
       </div>
     </div>
@@ -126,21 +126,21 @@
   </section>
 
 <!-- productos -->
-  <section id="productos" class="my-5">
+  <section id="productos">
     <div class="container">
       <h2 style="color:#78C4B7;" class="text-center mb-5">Nuestros Productos</h2>
-      <div class="row" id="chipa-container">
+      <div class="row mx-auto" id="chipa-container">
         <!-- acá se insertan las cards -->
       </div>
     </div>
   </section>
 
 <!-- carrusel de comentarios -->
-  <section class="py-5"style="padding-bottom: 100px;">
+  <section class="pb-5">
     <div class="container">
         <div class="carousel slide" data-bs-ride="carousel">
-          <h2 style="text-align: center; color:#78C4B7;" >Lo que opinan nuestros clientes</h2>
-        <div class="carousel-inner" id="reseñasdiv"  style="overflow: hidden;"><br>
+          <h2 class= "mb-5 mt-4" style="text-align: center; color:#78C4B7;" >Lo que opinan nuestros clientes</h2>
+        <div class="carousel-inner mx-auto w-100" id="reseñasdiv"  style="overflow: hidden;"><br>
           <!-- Aquí se cargarán dinámicamente las reseñas -->
         </div>
       </div>
@@ -148,14 +148,14 @@
   </section>
 
 <!-- footer -->
-  <footer id="contacto" class="pt-4" style="background-color: #78C4B7;">
+  <footer id="contacto" class="pt-4" style="background-color: #78c4b7bd;">
     <div class="container text-white">
-      <div class="row">
+      <div class="row mx-auto">
         <div class="col-md-6 d-flex flex-column justify-content-center">
-          <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong> Estado de Israel N° 1426- San Luis, Capital</p>
           <p><i class="bi bi-whatsapp me-2"></i><strong>Whatsapp y envíos:</strong> 266-4943616</p>
-          <p><i class="bi bi bi-clock me-2"></i><strong>Abrimos:</strong> Lunes a Sábados: 8:30 a 13:00 y 16:30 a 21:00</p>
+          <p><i class="bi bi bi-clock me-2"></i><strong>Abrimos:</strong> Lunes a Sábados: De 8:30am a 13:00pm y de 16:30pm a 21:00pm</p>
           <p><i class="bi bi-envelope-fill me-2"></i><strong>Correo:</strong> porasaboresdel.litoral@gmail.com</p>
+          <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Visitá nuestro local:</strong> Estado de Israel N° 1426- San Luis, Capital.</p>
         </div>
         <div class="col-md-6">
           <iframe 
