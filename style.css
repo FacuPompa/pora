@@ -1,4 +1,10 @@
 /* general */
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
   body {
     font-family: 'Poppins', sans-serif;
     background-image: url('./img/fondo.jpg') !important;
@@ -22,11 +28,11 @@
   .productos{
     margin-top: 50px;
   }
-  /* nav */
+
+/* nav */
   .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 60px;
-    justify-content: center;
+    min-height: 60px;
   }
 
   nav .nav-link {
@@ -42,11 +48,10 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  
-}
+  }
 
 
-   /* carrusel */
+/* carrusel */
   
   .SubCarr{
     text-align:center;
@@ -82,7 +87,7 @@
     border-radius: 50%;
   }
   
-  /* cards */
+/* cards */
   .card {
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -117,8 +122,14 @@
     background-color:#78C4B7 ;
     transform: scale(1.05);
   }
+
+/*Articulos dentro del modal del carrito*/
+  .divcreate p{
+    display: flex;
+    justify-content: start;
+  }
   
-  /* footer */
+/* footer */
   footer {
     font-size: 14px;
   }
@@ -131,8 +142,30 @@
   }
 
   #reseñasdiv {
-     overflow: hidden;
+    overflow: hidden;
   }
+@media screen and (max-width: 991.98px){
+/*navbar*/
+  .navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px;
+  }
+  .btoncarrito{
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .card{
+    margin: auto auto;
+  }
+}
+
+@media (min-width: 992px){
+  .navbar{
+    height: 60px;
+  }
+}
 
 
 
