@@ -119,11 +119,12 @@ fetch('chipa.json')
             cantidad: cant,
             precioOriginal: chipa.precio,
             precioTotal: total,
+            imagen: chipa.img,
           });
 
           //mostramos el producto en el carrito
           mosCarr();
-          
+
         });
       });
     });
@@ -139,18 +140,25 @@ function mosCarr(){
   container.innerHTML= "";
   //Mensaje para mostrar que le carrito esta vacio
   if (Carrito.length === 0){
-    container.innerHTML= "<p> Carrito Vacio </p>"
+    container.innerHTML= "<h4 class='d-flex justify-content-center align-content-center mb-0'> Carrito Vacio </h4>";
   }
   //Recorremos el arreglo carrito y le damos cuerpo al modal
   Carrito.forEach((elemento,i) =>{
     let cuerpo= document.createElement("div");
-    cuerpo.className= "mx-1 text-center border rounded divcreate";
+    cuerpo.className= "mb-3 px-3 py-2 text-center border rounded divcreate";
     //Armamos el cuerpo
     cuerpo.innerHTML= `
-      <h5>${elemento.producto}</h5>
-      <p>Cantidad: ${elemento.cantidad}</p>
-      <p>Precio: ${elemento.precioOriginal}</p>
-      <p>SubTotal: $${elemento.precioTotal}</p>
+      <div class='row align-items-center text-start'>
+        <h5 class='text-center'>${elemento.producto}</h5>
+        <div class='col-8'>
+          <p>Cantidad: ${elemento.cantidad} kg</p>
+          <p>Precio: ${elemento.precioOriginal}</p>
+          <p>SubTotal: $${elemento.precioTotal}</p>
+        </div>
+        <div class='col-4 text-end'>
+          <img src="${elemento.imagen}" alt="${elemento.producto}" class="img-fluid mb-2" style="max-height: 100px;">
+        </div>
+      </div>
     `;
     container.appendChild(cuerpo);
   });
@@ -176,13 +184,13 @@ fetch('reseñas.json')
         // si la primera reseña es == se agrega active
         if (reseñas.nro === 0) {
           cargar += `
-            <div class="carousel-item active">
-              <div class="row g-4 justify-content-center">`;
+            <div class="carousel-item active mx-auto">
+              <div class="row g-4 mx-auto justify-content-center">`;
         } else {
           // si no se cumple no se agrega class active
           cargar += `
-            <div class="carousel-item">
-              <div class="row g-4 justify-content-center">`;
+            <div class="carousel-item mx-auto">
+              <div class="row g-4 mx-auto justify-content-center">`;
         }
       }
 
