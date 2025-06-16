@@ -19,11 +19,17 @@
     font-size: 16px;
     line-height: 1.6;
   }
-  
-  .productos{
-    margin-top: 50px;
-  }
 
+  /* quienes somos */
+  #quienes-somos .card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 1.5rem;
+  }
+  #quienes-somos .lead {
+    color: #ffff;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 2px #0002;
+  }
 
   /* nav */
   .navbar {
@@ -41,18 +47,66 @@
     color: #FAC172;
   }
 
+  .btn-cart {
+    background: #C7573B;
+    border: none;
+    border-radius: 10px;
+    width: 6px 12px;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 0 2px 8px #0001;
+    transition: background 0.2s;
+  }
+  .btn-cart:hover {
+    background: #FAC172;
+    box-shadow: 0 4px 12px #0002;
+  }
+  .btn-cart:active, .btn-cart:focus {
+    background: #a13e27;
+    outline: none;
+    box-shadow: 0 2px 8px #0002;
+  }
+
+  .navbar-toggler {
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    margin-left: 4px;
+    display: flex;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  #cart-btn-desktop {
+    display: none;
+  }
+
   .logo{
-    width: 50px;
-    border-radius: 20%;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 0;
   }
 
    /* carrusel */
   
   .slider {
-    width: 75vw;
-    height: auto;
-    margin: auto;
-    overflow: hidden;
+  max-width: 1200px;
+  width: 90vw;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
   }
 
   .slider .slide-track {
@@ -62,6 +116,11 @@
     width: calc(200px * 16);
   }
 
+  .slider .slide-track:hover {
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
   .slider .slide {
     width: 400px;
     margin: 40px;
@@ -69,6 +128,17 @@
 
   .slider .slide img {
     width: 100%;
+  }
+
+  @keyframes scroll{
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+    }
   }
 
   @keyframes scroll{
@@ -134,6 +204,10 @@
     background-color:#78C4B7 ;
     transform: scale(1.05);
   }
+
+  #cart-count, #cart-count-desktop {
+  margin-top: 4px;
+}
   
   /* footer */
   footer {
@@ -156,13 +230,87 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .botonwpp{
-      visibility: hidden;
-      }
+  /* responsive */
+.container, .container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
-      .cardd {
-        width: 50%;
-        float: left;
-      }
-    }
+
+@media (max-width: 768px) {
+  .botonwpp {
+    visibility: hidden;
+  }
+
+  .btn-cart, .iconocart{
+    padding: 3px 6px;
+  }
+  .slider, #preciosycombos, #combo{
+    display: none;
+  }
+
+  #productos .row > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 20px;
+  }
+  .card {
+    margin-bottom: 0;
+    min-width: 120px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #0001;
+  }
+  .card img {
+    max-height: 110px;
+    border-radius: 14px 14px 0 0;
+  }
+  .card-body {
+    padding: 14px 10px 10px 10px;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #cart-btn-desktop {
+    display: flex;
+  }
+  #cart-btn-mobile {
+    display: none;
+  }
+  .navbar .d-flex.align-items-center {
+    gap: 14px;
+  }
+  .navbar .d-flex.d-lg-none {
+    padding-right: 16px;
+    padding-left: 8px;
+    gap: 16px;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+  .navbar-collapse {
+    background: #839a42;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 12px #0002;
+    text-align: center;
+  }
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    color: #fff !important;
+  }
+}
+
