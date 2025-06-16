@@ -3,24 +3,28 @@
     "nro": 1,
     "sabor": "Clasico",
     "descripcion": "Chipa tradicional con mucho queso, crocante por fuera y suave por dentro",
-    "img": "./img/chipa-clasico.jpg"
+    "img": "./img/chipa-clasico.jpg",
+    "precio": 1400
   },
   {
     "nro": 2,
     "sabor": "Roquefort",
     "descripcion": "Chipa con queso roquefort para paladares intensos",
-    "img": "./img/chipa-roquefort.jpg"
+    "img": "./img/chipa-roquefort.jpg",
+    "precio": 1500
   },
   {
     "nro": 3,
     "sabor": "Salame",
     "descripcion": "Chipa con trozos de salame, ideal para picadas",
-    "img": "./img/chipa-salame.png"
+    "img": "./img/chipa-salame.png",
+    "precio": 1500
   },
   {
     "nro": 4,
     "sabor": "Orégano",
     "descripcion": "Chipa saborizada con orégano y mezcla de quesos",
-    "img": "./img/chipa-oregano.jpg"
+    "img": "./img/chipa-oregano.jpg",
+    "precio": 1500
   }
 ]
