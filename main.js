@@ -64,7 +64,7 @@ fetch('chipa.json')
               <!-- descripcion -->
               <p class="card-text">${chipa.descripcion}</p>
               <!-- boton que podria añadir pdf -->
-              <a href="#" class="btn btn-primary">Ver más</a>
+              <a href="${chipa.pdf}" class="btn btn-primary">Ver más</a>
               <button type="button" class="btn btn-primary btnagc" data-index="${i}" data-bs-toggle="modal" data-bs-target="#myModalCant">
                 Agregar al carrito
               </button>
