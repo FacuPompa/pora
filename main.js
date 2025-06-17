@@ -1,3 +1,42 @@
+/*Agregamos el array del carrito*/
+let Carrito = []; 
+
+/*Funcionalidad de los botones +/-*/
+function masymenos(subtotal = () =>{}){
+  let grupo= document.querySelector(".grupo-cant");
+  let btonsumar= grupo.querySelector(".btn-sumar-cant");
+  let btonrestar= grupo.querySelector(".btn-restar-cant");
+  let inputcant= grupo.querySelector(".input-cant");
+
+  btonsumar.addEventListener("click", () => {
+    let valorinput= parseInt(inputcant.value);
+    inputcant.value= valorinput + 1;
+    subtotal();
+  });
+
+  btonrestar.addEventListener("click",() => {
+    let valorinput= parseInt(inputcant.value);
+    if (valorinput > 1){
+      inputcant.value= valorinput - 1;
+      subtotal();
+    }
+  });
+}
+
+/*Funcion para actualizar el precio*/
+//Variable que reincia el precio
+let precioennumero= 1;
+function calsubtotal(){
+  //Guardar el valor del input(pasado a entero) en una variable
+  let valor= parseInt(document.querySelector(".input-cant").value);
+  //Guardamos la multiplicaion
+  let subtotal= valor * precioennumero;
+  //Mostramos en el cuerpo del modal el precio del subtotal
+  document.getElementById("modal-subtotal").textContent= `$${subtotal}`;
+}
+
+
+
 //carga json de cards
 fetch('chipa.json')
   // convierte objeto
@@ -12,8 +51,7 @@ fetch('chipa.json')
     let card = "";
 
     // Recorre cada objeto chipa del arreglo
-    chipas.forEach(chipa => {
-
+    chipas.forEach((chipa,i)=> {
       // agrega card al html
       card += `
         <div class="col-md-6 mb-4">
@@ -27,15 +65,111 @@ fetch('chipa.json')
               <p class="card-text">${chipa.descripcion}</p>
               <!-- boton que podria añadir pdf -->
               <a href="#" class="btn btn-primary">Ver más</a>
+              <button type="button" class="btn btn-primary btnagc" data-index="${i}" data-bs-toggle="modal" data-bs-target="#myModalCant">
+                Agregar al carrito
+              </button>
             </div>
           </div>
         </div>
       `;
     });
-
     // inserta cards
     container.innerHTML = card;
+
+    //Guardamos los botones "Agregar al carrito" en una variable
+    let btnacarrito= document.querySelectorAll(".btnagc");
+    //Bucamos todos los botones de las cards
+    btnacarrito.forEach((bton) =>{
+      //Agregamos el evento click
+      bton.addEventListener("click",() => {
+
+        //Guardamos los datos de las cards en variables
+        let indice= parseInt(bton.dataset.index);
+        let chipa= chipas[indice];
+
+        //Guardamos el modal en una variable
+        let modal= document.getElementById("myModalCant");
+        let input= modal.querySelector(".input-cant");
+        let precio= chipa.precio;
+        let precioint= parseInt(precio.replace(/\D/g,""));
+        let btonCA= modal.querySelector(".confirmar-agregar");
+
+        //Actualizamos el precio segun el producto seleccionado
+        precioennumero= precioint;
+
+        //Armamos el cuerpo del modal con los datos correspondientes
+        modal.querySelector(".modal-title").textContent= chipa.sabor;
+        modal.querySelector(".modal-precio").textContent= chipa.precio;
+
+        //Reiniciamos el input cada vez que se haga click
+        input.value= 1;
+        calsubtotal();
+
+        //Boton para agregar el producto al carrito con todos sus datos(REEMPLAZAMOS Y REDECLARAMOS para evitar fallos)
+        btonCA.replaceWith(btonCA.cloneNode(true));
+        let nbtonCA= modal.querySelector(".confirmar-agregar");
+
+        nbtonCA.addEventListener("click",() => {
+
+          //Guardamos los nuevos datos en variable
+          let cant= parseInt(input.value);
+          let total= cant * precioint;
+
+          //Guardamos el producto en el array carrito
+          Carrito.push({
+            producto: chipa.sabor,
+            cantidad: cant,
+            precioOriginal: chipa.precio,
+            precioTotal: total,
+            imagen: chipa.img,
+          });
+
+          //mostramos el producto en el carrito
+          mosCarr();
+
+        });
+      });
+    });
   });
+
+masymenos(calsubtotal);
+
+/*Funcion para mostrar los articulos en el modal del carrito*/ 
+function mosCarr(){
+  //Guardamos el cuerpo del modal del carrito en una variable
+  let container= document.querySelector(".producto-carrito");
+  //Limpiamos para que no haya errores
+  container.innerHTML= "";
+  //Mensaje para mostrar que le carrito esta vacio
+  if (Carrito.length === 0){
+    container.innerHTML= "<h4 class='d-flex justify-content-center align-content-center mb-0'> Carrito Vacio </h4>";
+  }
+  //Recorremos el arreglo carrito y le damos cuerpo al modal
+  Carrito.forEach((elemento,i) =>{
+    let cuerpo= document.createElement("div");
+    cuerpo.className= "mb-3 px-3 py-2 text-center border rounded divcreate";
+    //Armamos el cuerpo
+    cuerpo.innerHTML= `
+      <div class='row align-items-center text-start'>
+        <h5 class='text-center'>${elemento.producto}</h5>
+        <div class='col-8'>
+          <p>Cantidad: ${elemento.cantidad} kg</p>
+          <p>Precio: ${elemento.precioOriginal}</p>
+          <p>SubTotal: $${elemento.precioTotal}</p>
+        </div>
+        <div class='col-4 text-end'>
+          <img src="${elemento.imagen}" alt="${elemento.producto}" class="img-fluid mb-2" style="max-height: 100px;">
+        </div>
+      </div>
+    `;
+    container.appendChild(cuerpo);
+  });
+}
+
+//Invocamos la funcion para mostrar en un principio que el carrito esta vacio
+mosCarr();
+
+
 
 
 
@@ -88,4 +222,3 @@ fetch('reseñas.json')
     // inserta las cards
     divid.innerHTML = cargar;
   });
-
