@@ -135,5 +135,81 @@
   }
 
 
+  /* boton whatsapp */
+  .botonwpp {
+    position: fixed;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    padding-top: 7px;
+    font-size: 30px;
+    border-radius: 50px;
+    color: #ffff;
+    background-color: #25d366;
+    box-shadow: 2px 2px 3px #999f;
+  }
+  
+
+   /* carrusel */
+  
+  .slider {
+  max-width: 1200px;
+  width: 90vw;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  }
+
+  .slider .slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    -webkit-animation: scroll 20s linear infinite;
+    width: calc(200px * 16);
+  }
+
+  .slider .slide-track:hover {
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
+  .slider .slide {
+    width: 400px;
+    margin: 40px;
+  }
+
+  .slider .slide img {
+    width: 100%;
+  }
+
+  @keyframes scroll{
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+    }
+  }
+
+  @keyframes scroll{
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+    }
+  }
+
+
+
+
+
+
+
 
 
