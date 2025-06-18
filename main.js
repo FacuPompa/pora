@@ -36,7 +36,6 @@ function calsubtotal(){
 }
 
 
-
 //carga json de cards
 fetch('chipa.json')
   // convierte objeto
