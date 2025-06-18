@@ -1,12 +1,24 @@
 /* general */
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
   body {
     font-family: 'Poppins', sans-serif;
+    background-image: url('./img/fondo.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     color: #333;
   }
 
   h2 {
     color: white;
     font-weight: 600;
+    text-align: center;
   }
   
   p {
@@ -81,18 +93,17 @@
   }
 
   .logo{
-    width: 44px;
-    height: 44px;
+    max-width: 50px;
+    height: 50px;
     border-radius: 40%;
     object-fit: cover;
     margin-right: 0;
   }
-
- .carousel-img {
-  max-height:500px;
-  width: auto;
+  /*Carrusel de imagenes precios*/
+  #PYC{
+  width: 80%;
   object-fit: contain;
-}
+  } 
   .carousel-control-prev {
     position: absolute;
     top: 50%; 
@@ -114,8 +125,7 @@
     background-color: #839A42; 
     border-radius: 50%;
   }
-  
-  /* cards */
+
   .card {
     border: none;
     box-shadow: 0 8px 16px rgba(0,0,0,0.13);
@@ -132,16 +142,20 @@
     object-fit: cover;
   }
 
-#preciosycombos + .container img,
+#preciosycombos + .container-fluid img,
 #quienes-somos img {
   transition: transform 0.3s cubic-bezier(.4,0,.2,1);
 }
 
-#preciosycombos + .container img:hover,
+#preciosycombos + .container-fluid img:hover,
 #quienes-somos img:hover {
   transform: scale(1.025);
   z-index: 2;
 }
+
+  #productos > div{
+    width: 85%;
+  }
 
 .card.card-comentario {
   box-shadow: 0 8px 16px rgba(0,0,0,0.13);
@@ -282,11 +296,11 @@
     padding-left: 8px;
     padding-right: 8px;
     margin-bottom: 20px;
-  }
+  } 
   .card {
     margin-bottom: 0;
     min-width: 120px;
-    max-width: 95%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 14px;
@@ -306,30 +320,24 @@
     font-size: 15px;
     border-radius: 8px;
   }
+  #productos > div{
+    width: 100%;
+  }
 }
 
-@media (max-width: 991.98px) {
+@media screen and (max-width: 991.98px) {
   #cart-btn-desktop {
     display: flex;
   }
   #cart-btn-mobile {
     display: none;
   }
-  .navbar .d-flex.align-items-center {
-    gap: 14px;
+  .navbar{
+    padding: 0px;
   }
-  .navbar .d-flex.d-lg-none {
-    padding-right: 16px;
-    padding-left: 8px;
-    gap: 16px;
-  }
-
   .navbar-collapse {
     background: #a0bd51e0;
-    padding-top: 12px;
-    padding-bottom: 12px;
     border-radius: 0 0 16px 16px;
-    box-shadow: 0 4px 12px #0002;
     text-align: center;
   }
   .navbar-nav .nav-link {
@@ -337,5 +345,8 @@
     margin-top: 12px;
     margin-bottom: 12px;
     color: #fff !important;
+  }
+  #productos > div{
+    width: 100%;
   }
 }
