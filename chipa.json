@@ -3,7 +3,7 @@
     "nro": 1,
     "sabor": "Clasico",
     "descripcion": "Chipa tradicional con mucho queso, crocante por fuera y suave por dentro",
-    "img": "./img/chipa-clasico.png",
+    "img": "./img/chipa-clasico.jpg",
     "precio": "$9200 x kg",
     "pdf":"./Pdfs/Chipá sabor orégano.pdf"
   },
