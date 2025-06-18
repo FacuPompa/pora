@@ -64,7 +64,7 @@ fetch('chipa.json')
               <!-- descripcion -->
               <p class="card-text">${chipa.descripcion}</p>
               <!-- boton que podria añadir pdf -->
-              <a href="${chipa.pdf}" class="btn btn-primary">Ver más</a>
+              <a href="${chipa.pdf}" class="btn btn-primary" style="margin-right: 14px;">Ver más</a>
               <button type="button" class="btn btn-primary btnagc" data-index="${i}" data-bs-toggle="modal" data-bs-target="#myModalCant">
                 Agregar al carrito
               </button>
@@ -110,23 +110,30 @@ fetch('chipa.json')
         let nbtonCA= modal.querySelector(".confirmar-agregar");
 
         nbtonCA.addEventListener("click",() => {
-
           //Guardamos los nuevos datos en variable
-          let cant= parseInt(input.value);
-          let total= cant * precioint;
+          let cant = parseInt(input.value);
+          let total = cant * precioint;
 
-          //Guardamos el producto en el array carrito
-          Carrito.push({
-            producto: chipa.sabor,
-            cantidad: cant,
-            precioOriginal: chipa.precio,
-            precioTotal: total,
-            imagen: chipa.img,
-          });
+          // Buscar si el producto ya está en el carrito
+          let existente = Carrito.find(item => item.producto === chipa.sabor);
+
+          if (existente) {
+            // Si existe, sumá la cantidad y el total
+            existente.cantidad += cant;
+            existente.precioTotal += total;
+          } else {
+            // Si no existe, agregalo
+            Carrito.push({
+              producto: chipa.sabor,
+              cantidad: cant,
+              precioOriginal: chipa.precio,
+              precioTotal: total,
+              imagen: chipa.img,
+            });
+          }
 
           //mostramos el producto en el carrito
           mosCarr();
-
         });
       });
     });
@@ -137,28 +144,31 @@ masymenos(calsubtotal);
 /*Funcion para mostrar los articulos en el modal del carrito*/ 
 function mosCarr(){
   //Guardamos el cuerpo del modal del carrito en una variable
-  let container= document.querySelector(".producto-carrito");
+  let container = document.querySelector(".producto-carrito");
   //Limpiamos para que no haya errores
-  container.innerHTML= "";
-  //Mensaje para mostrar que le carrito esta vacio
+  container.innerHTML = "";
+  //Mensaje para mostrar que el carrito esta vacio
   if (Carrito.length === 0){
-    container.innerHTML= "<h4 class='d-flex justify-content-center align-content-center mb-0'> Carrito Vacio </h4>";
+    container.innerHTML = "<h5 class='d-flex justify-content-center align-content-center mb-0'> Carrito Vacio </h5>";
+    return;
   }
   //Recorremos el arreglo carrito y le damos cuerpo al modal
-  Carrito.forEach((elemento,i) =>{
-    let cuerpo= document.createElement("div");
-    cuerpo.className= "mb-3 px-3 py-2 text-center border rounded divcreate";
-    //Armamos el cuerpo
-    cuerpo.innerHTML= `
-      <div class='row align-items-center text-start'>
-        <h5 class='text-center'>${elemento.producto}</h5>
-        <div class='col-8'>
-          <p>Cantidad: ${elemento.cantidad} kg</p>
-          <p>Precio: ${elemento.precioOriginal}</p>
-          <p>SubTotal: $${elemento.precioTotal}</p>
+  Carrito.forEach((elemento, i) => {
+    let cuerpo = document.createElement("div");
+    cuerpo.className = "mb-3 px-3 py-2 text-center border rounded divcreate";
+    //Armamos el cuerpo del producto en el carrito
+    cuerpo.innerHTML = `
+      <div class="row align-items-center">
+        <div class="col-3">
+          <img src="${elemento.imagen}" alt="${elemento.producto}" class="img-fluid rounded" style="max-height:60px;">
         </div>
-        <div class='col-4 text-end'>
-          <img src="${elemento.imagen}" alt="${elemento.producto}" class="img-fluid mb-2" style="max-height: 100px;">
+        <div class="col-6">
+          <h6 class="mb-1">${elemento.producto}</h6>
+          <div class="small text-muted">Cantidad: ${elemento.cantidad}</div>
+          <div class="small text-muted">Precio unitario: ${elemento.precioOriginal}</div>
+        </div>
+        <div class="col-3">
+          <div class="fw-bold text-success">Total: $${elemento.precioTotal}</div>
         </div>
       </div>
     `;
@@ -168,10 +178,6 @@ function mosCarr(){
 
 //Invocamos la funcion para mostrar en un principio que el carrito esta vacio
 mosCarr();
-
-
-
-
 
 // carga json de comentarios
 fetch('reseñas.json')
@@ -199,17 +205,19 @@ fetch('reseñas.json')
         }
       }
 
-      // acumula o concatena info de las reseñas
+      // NUEVO DISEÑO DE CARD
       cargar += `
-        <div class="col-md-6">
-          <div style="background-color: #839a42c9;" class="card ">
-            <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
-              <h5 class="card-title fw-bold text-dark">${reseñas.nombre}</h5>
-              <p class="card-text text-muted">${reseñas.comentario}</p>
-              <div class="text-warning fs-5">${reseñas.estrellas}</div>
-            </div>
+    <div class="col-md-6">
+      <div class="card border-0 p-3 h-100" style="background:#a0bd51e0;">
+        <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
+          <div>
+            <h5 class="card-title fw-bold mb-2 text-white">${reseñas.nombre}</h5>
+            <div class="fs-5 mb-2" style="color:#FAC172;">${reseñas.estrellas}</div>
           </div>
-        </div>`;
+          <p class="card-text mb-0 text-white" style="font-size: 1rem;">${reseñas.comentario}</p>
+        </div>
+      </div>
+    </div>`;
 
       // si el nro es impar cierra los div
       if (reseñas.nro % 2 !== 0) {
@@ -218,7 +226,27 @@ fetch('reseñas.json')
             </div>`;
       }
     });
-
     // inserta las cards
     divid.innerHTML = cargar;
   });
+
+function mostrarToast(mensaje, exito = true) {
+  const toast = document.getElementById('toastCompra');
+  const toastMsg = document.getElementById('toastCompraMsg');
+  toastMsg.textContent = mensaje;
+  toast.classList.remove('bg-success', 'bg-danger');
+  toast.classList.add(exito ? 'bg-success' : 'bg-danger');
+  const bsToast = new bootstrap.Toast(toast);
+  bsToast.show();
+};
+
+// manejo compra
+document.getElementById("btncomprar").addEventListener("click", function() {
+    if (Carrito.length === 0) {
+        mostrarToast("El carrito está vacío. Agregá productos antes de comprar.", false);
+    } else {
+        mostrarToast("¡Compra realizada con éxito!", true);
+        Carrito = [];
+        mosCarr();
+    }
+});
