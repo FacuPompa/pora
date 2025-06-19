@@ -290,13 +290,7 @@
     padding: 3px 6px;
   }
 
-  #productos .row > div {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-bottom: 20px;
-  } 
+ 
   .card {
     margin-bottom: 0;
     min-width: 120px;
@@ -350,3 +344,4 @@
     width: 100%;
   }
 }
+
