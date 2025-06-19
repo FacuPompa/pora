@@ -306,6 +306,14 @@
   .card-body {
     padding: 14px 10px 10px 10px;
   }
+  .card-body button{
+    margin: auto auto;
+  }
+  .card-body a{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+  }
   .btn-primary {
     width: 100%;
     padding: 6px;
