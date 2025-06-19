@@ -1,7 +1,5 @@
-/*Agregamos el array del carrito*/
 let Carrito = []; 
 
-/*Funcionalidad de los botones +/-*/
 function masymenos(subtotal = () =>{}){
   let grupo= document.querySelector(".grupo-cant");
   let btonsumar= grupo.querySelector(".btn-sumar-cant");
@@ -23,35 +21,21 @@ function masymenos(subtotal = () =>{}){
   });
 }
 
-/*Funcion para actualizar el precio*/
-//Variable que reincia el precio
 let precioennumero= 1;
 function calsubtotal(){
-  //Guardar el valor del input(pasado a entero) en una variable
   let valor= parseInt(document.querySelector(".input-cant").value);
-  //Guardamos la multiplicaion
   let subtotal= valor * precioennumero;
-  //Mostramos en el cuerpo del modal el precio del subtotal
   document.getElementById("modal-subtotal").textContent= `$${subtotal}`;
 }
 
 
-//carga json de cards
 fetch('chipa.json')
-  // convierte objeto
   .then(response => response.json())
-
-  // se ejecuta la funcion con el arreglo de chipas
   .then(chipas => {
 
     let container = document.getElementById("chipa-container");
-
-    // variable para acumular texto html
     let card = "";
-
-    // Recorre cada objeto chipa del arreglo
     chipas.forEach((chipa,i)=> {
-      // agrega card al html
       card += `
         <div class=" col-12 col-md-6 mb-4">
           <div class="card">
@@ -72,56 +56,36 @@ fetch('chipa.json')
         </div>
       `;
     });
-    // inserta cards
     container.innerHTML = card;
 
-    //Guardamos los botones "Agregar al carrito" en una variable
     let btnacarrito= document.querySelectorAll(".btnagc");
-    //Bucamos todos los botones de las cards
     btnacarrito.forEach((bton) =>{
-      //Agregamos el evento click
       bton.addEventListener("click",() => {
 
-        //Guardamos los datos de las cards en variables
         let indice= parseInt(bton.dataset.index);
         let chipa= chipas[indice];
-
-        //Guardamos el modal en una variable
         let modal= document.getElementById("myModalCant");
         let input= modal.querySelector(".input-cant");
         let precio= chipa.precio;
         let precioint= parseInt(precio.replace(/\D/g,""));
         let btonCA= modal.querySelector(".confirmar-agregar");
-
-        //Actualizamos el precio segun el producto seleccionado
         precioennumero= precioint;
-
-        //Armamos el cuerpo del modal con los datos correspondientes
         modal.querySelector(".modal-title").textContent= chipa.sabor;
         modal.querySelector(".modal-precio").textContent= chipa.precio;
-
-        //Reiniciamos el input cada vez que se haga click
         input.value= 1;
         calsubtotal();
-
-        //Boton para agregar el producto al carrito con todos sus datos(REEMPLAZAMOS Y REDECLARAMOS para evitar fallos)
         btonCA.replaceWith(btonCA.cloneNode(true));
         let nbtonCA= modal.querySelector(".confirmar-agregar");
 
         nbtonCA.addEventListener("click",() => {
-          //Guardamos los nuevos datos en variable
           let cant = parseInt(input.value);
           let total = cant * precioint;
-
-          // Buscar si el producto ya está en el carrito
           let existente = Carrito.find(item => item.producto === chipa.sabor);
 
           if (existente) {
-            // Si existe, sumá la cantidad y el total
             existente.cantidad += cant;
             existente.precioTotal += total;
           } else {
-            // Si no existe, agregalo
             Carrito.push({
               producto: chipa.sabor,
               cantidad: cant,
@@ -130,8 +94,6 @@ fetch('chipa.json')
               imagen: chipa.img,
             });
           }
-
-          //mostramos el producto en el carrito
           mosCarr();
         });
       });
@@ -140,22 +102,16 @@ fetch('chipa.json')
 
 masymenos(calsubtotal);
 
-/*Funcion para mostrar los articulos en el modal del carrito*/ 
 function mosCarr(){
-  //Guardamos el cuerpo del modal del carrito en una variable
   let container = document.querySelector(".producto-carrito");
-  //Limpiamos para que no haya errores
   container.innerHTML = "";
-  //Mensaje para mostrar que el carrito esta vacio
   if (Carrito.length === 0){
     container.innerHTML = "<h5 class='d-flex justify-content-center align-content-center mb-0'> Carrito Vacio </h5>";
     return;
   }
-  //Recorremos el arreglo carrito y le damos cuerpo al modal
   Carrito.forEach((elemento, i) => {
     let cuerpo = document.createElement("div");
     cuerpo.className = "mb-3 px-3 py-2 text-center border rounded divcreate";
-    //Armamos el cuerpo del producto en el carrito
     cuerpo.innerHTML = `
       <div class="row align-items-center">
         <div class="col-3">
@@ -175,57 +131,47 @@ function mosCarr(){
   });
 }
 
-//Invocamos la funcion para mostrar en un principio que el carrito esta vacio
 mosCarr();
 
 // carga json de comentarios
 fetch('reseñas.json')
-  .then(response2 => response2.json()) //convierte objeto
-  .then(objetos => { // arreglo de objetos
+  .then(response2 => response2.json())
+  .then(objetos => {
     let divid = document.getElementById("reseñasdiv");
-    //variable acumulativa
     let cargar = "";
 
-    // recorre cada objeto del arreglo
-    objetos.forEach(reseñas => {
-
-      // si el numero es par, se añade otro slide al carrusel
-      if (reseñas.nro % 2 === 0) {
-        // si la primera reseña es == se agrega active
-        if (reseñas.nro === 0) {
-          cargar += `
-            <div class="carousel-item active">
-              <div class="row g-4 justify-content-center mx-auto">`;
-        } else {
-          // si no se cumple no se agrega class active
-          cargar += `
-            <div class="carousel-item">
-              <div class="row g-4 justify-content-center mx-auto">`;
-        }
-      }
-
-      // NUEVO DISEÑO DE CARD
-      cargar += `
-    <div class="col-12 col-md-6">
-      <div class="card border-0 p-3 h-100" style="background:#a0bd51e0;">
-        <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
-          <div>
-            <h5 class="card-title fw-bold mb-2 text-white">${reseñas.nombre}</h5>
-            <div class="fs-5 mb-2" style="color:#FAC172;">${reseñas.estrellas}</div>
-          </div>
-          <p class="card-text mb-0 text-white" style="font-size: 1rem;">${reseñas.comentario}</p>
-        </div>
-      </div>
-    </div>`;
-
-      // si el nro es impar cierra los div
-      if (reseñas.nro % 2 !== 0) {
-        cargar += `
+for (let i = 0; i < objetos.length; i += 2) {
+  cargar += `
+    <div class="carousel-item${i === 0 ? ' active' : ''}">
+      <div class="row g-4 justify-content-center mx-auto">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <div class="card border-0 p-3 h-100" style="background:#a0bd51e0;">
+            <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
+              <div>
+                <h5 class="card-title fw-bold mb-2 text-white">${objetos[i].nombre}</h5>
+                <div class="fs-5 mb-2" style="color:#FAC172;">${objetos[i].estrellas}</div>
               </div>
-            </div>`;
-      }
-    });
-    // inserta las cards
+              <p class="card-text mb-0 text-white" style="font-size: 1rem;">${objetos[i].comentario}</p>
+            </div>
+          </div>
+        </div>
+        ${objetos[i+1] ? `
+        <div class="col-12 col-md-6 d-none d-md-block">
+          <div class="card border-0 p-3 h-100" style="background:#a0bd51e0;">
+            <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
+              <div>
+                <h5 class="card-title fw-bold mb-2 text-white">${objetos[i+1].nombre}</h5>
+                <div class="fs-5 mb-2" style="color:#FAC172;">${objetos[i+1].estrellas}</div>
+              </div>
+              <p class="card-text mb-0 text-white" style="font-size: 1rem;">${objetos[i+1].comentario}</p>
+            </div>
+          </div>
+        </div>
+        ` : ''}
+      </div>
+    </div>
+  `;
+}
     divid.innerHTML = cargar;
   });
 
