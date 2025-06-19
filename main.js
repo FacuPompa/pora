@@ -53,7 +53,7 @@ fetch('chipa.json')
     chipas.forEach((chipa,i)=> {
       // agrega card al html
       card += `
-        <div class="col-md-6 mb-4">
+        <div class=" col-12 col-md-6 mb-4">
           <div class="card">
             <!--img chipa -->
             <img src="${chipa.img}" class="card-img-top cardimg" alt="${chipa.sabor}">
@@ -206,7 +206,7 @@ fetch('reseñas.json')
 
       // NUEVO DISEÑO DE CARD
       cargar += `
-    <div class="col-md-6">
+    <div class="col-12 col-md-6">
       <div class="card border-0 p-3 h-100" style="background:#a0bd51e0;">
         <div class="card-body text-center d-flex flex-column justify-content-between" style="min-height: 220px;">
           <div>
