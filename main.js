@@ -195,12 +195,12 @@ fetch('reseñas.json')
         if (reseñas.nro === 0) {
           cargar += `
             <div class="carousel-item active">
-              <div class="row g-4 justify-content-center">`;
+              <div class="row g-4 justify-content-center mx-auto">`;
         } else {
           // si no se cumple no se agrega class active
           cargar += `
             <div class="carousel-item">
-              <div class="row g-4 justify-content-center">`;
+              <div class="row g-4 justify-content-center mx-auto">`;
         }
       }
 
