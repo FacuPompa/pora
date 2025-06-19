@@ -326,7 +326,7 @@
   }
 }
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: 990px) {
   #cart-btn-desktop {
     display: flex;
   }
@@ -337,7 +337,7 @@
     padding: 0px;
   }
   .navbar-collapse {
-    background: #a0bd51e0;
+    background: #a0bd51;
     border-radius: 0 0 16px 16px;
     text-align: center;
   }
@@ -352,3 +352,35 @@
   }
 }
 
+@media (max-width: 768px) {
+  .pyc-carrusel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .pyc-carrusel-wrapper .carousel {
+    width: 100%;
+  }
+  .pyc-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: #839A42;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #839A42;
+    opacity: 1;
+  }
+  .carousel-control-prev-static.pyc-control {
+    left: -50px;
+  }
+  .carousel-control-next-static.pyc-control {
+    right: -50px;
+  }
+}
