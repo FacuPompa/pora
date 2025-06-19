@@ -290,7 +290,6 @@
     padding: 3px 6px;
   }
 
- 
   .card {
     margin-bottom: 0;
     min-width: 120px;
@@ -301,7 +300,7 @@
     box-shadow: 2px -8px #0001;
   }
   .card img {
-    max-height: 110px;
+    max-height: 200px;
     border-radius: 14px 14px 0 0;
   }
   .card-body {
