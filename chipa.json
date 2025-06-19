@@ -5,7 +5,7 @@
     "descripcion": "Chipa tradicional con mucho queso, crocante por fuera y suave por dentro",
     "img": "./img/chipa-clasico.jpg",
     "precio": "$9200 x kg",
-    "pdf":"./Pdfs/Chipá sabor orégano.pdf"
+    "pdf":"./Pdfs/Chipá clásico .pdf"
   },
   {
     "nro": 2,
@@ -13,7 +13,7 @@
     "descripcion": "Chipa con queso roquefort para paladares intensos",
     "img": "./img/chipa-roquefort.jpg",
     "precio":"$9440 x kg",
-    "pdf":"./Pdfs/Chipá sabor orégano.pdf"
+    "pdf":"./Pdfs/Chipá sabor roquefort .pdf"
   },
   {
     "nro": 3,
@@ -21,7 +21,7 @@
     "descripcion": "Chipa con trozos de salame, ideal para picadas",
     "img": "./img/chipa-salame.png",
     "precio":"$9600 x kg",
-    "pdf":"./Pdfs/Chipá sabor orégano.pdf"
+    "pdf":"./Pdfs/Chipá sabor salame .pdf"
 
   },
   {
